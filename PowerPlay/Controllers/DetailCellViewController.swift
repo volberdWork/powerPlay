@@ -13,6 +13,7 @@ class DetailCellViewController: UIViewController {
     
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

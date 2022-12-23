@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD6B2A0E2955FE750007F084 /* PreloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */; };
 		BD928BD629524D3500600A1C /* InfoCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD928BD529524D3500600A1C /* InfoCustomView.swift */; };
 		BD928BD929524D5500600A1C /* InfoCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD928BD829524D5500600A1C /* InfoCustomView.xib */; };
 		BD928BE02953A7B700600A1C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD928BDF2953A7B700600A1C /* MainViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderViewController.swift; sourceTree = "<group>"; };
 		BD928BD529524D3500600A1C /* InfoCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCustomView.swift; sourceTree = "<group>"; };
 		BD928BD829524D5500600A1C /* InfoCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCustomView.xib; sourceTree = "<group>"; };
 		BD928BDF2953A7B700600A1C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				BD928BF029546E4600600A1C /* SetingsViewController.swift */,
 				BD928BF22954736600600A1C /* TermsOfServiceViewController.swift */,
 				BD928BF42954890F00600A1C /* SavedViewController.swift */,
+				BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD6B2A0E2955FE750007F084 /* PreloaderViewController.swift in Sources */,
 				BDA18F7F29521ADE00C0EAE2 /* DetailCellViewController.swift in Sources */,
 				BD928BD629524D3500600A1C /* InfoCustomView.swift in Sources */,
 				BD928BE02953A7B700600A1C /* MainViewController.swift in Sources */,
