@@ -1,7 +1,7 @@
 import UIKit
 
 class CustomMainInfoTableViewCell: UITableViewCell {
-   
+    
     @IBOutlet var collectionView: UICollectionView!
     
     var models  = [ExapleModel]()
@@ -26,7 +26,7 @@ class CustomMainInfoTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
-
+        
     }
     
     
@@ -41,8 +41,8 @@ extension CustomMainInfoTableViewCell: UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Item Selection" , indexPath.section, indexPath.row)
-                
-                NotificationCenter.default.post(name: Notification.Name("cellTap"), object: indexPath.row)
+        
+        NotificationCenter.default.post(name: Notification.Name("cellTap"), object: indexPath.row)
     }
     
     

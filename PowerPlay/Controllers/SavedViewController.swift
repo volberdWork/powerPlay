@@ -6,7 +6,7 @@ class SavedViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     var model = [ExapleModel]()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -14,22 +14,15 @@ class SavedViewController: UIViewController {
         
     }
     
-
+    
     
     func configure(){
         view.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
         tableView.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
         tableView.register(SavedTableViewCell.nib(), forCellReuseIdentifier: SavedTableViewCell.identifier )
     }
-
+    
 }
-
-
-
-
-
-
-
 
 
 

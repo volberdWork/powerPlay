@@ -3,30 +3,35 @@ import UIKit
 class MainViewController: UIViewController, UICollectionViewDelegate{
     @IBOutlet var tableView: UITableView!
     
-    var model = [ExapleModel]()
+    var model = [ExapleModel(date: "2222", leftImagName: "dinamo", rightImagName: "psg", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5),
+                 ExapleModel(date: "2022", leftImagName: "manchester", rightImagName: "real", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5),
+                 ExapleModel(date: "2222", leftImagName: "dinamo", rightImagName: "psg", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5),
+                 ExapleModel(date: "2022", leftImagName: "manchester", rightImagName: "real", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5),
+                 ExapleModel(date: "2222", leftImagName: "dinamo", rightImagName: "psg", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5),
+                 ExapleModel(date: "2022", leftImagName: "manchester", rightImagName: "real", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5)]
     
     
     override func viewDidLoad() {
-            super.viewDidLoad()
-
-            
-            exapmpleModels()
-            configure()
-            
-            NotificationCenter.default.addObserver(self, selector: #selector(showDetailController(notification:)), name: Notification.Name("cellTap"), object: nil)
-
-            
-        }
+        super.viewDidLoad()
         
-        @objc private func showDetailController(notification: Notification) {
-            
-            print("ID:", notification)
-            
-            let main = UIStoryboard(name: "Main", bundle: nil)
-            let vc = main.instantiateViewController(withIdentifier: "DetailCellViewController")
-            navigationController?.pushViewController(vc, animated: true)
-            
-        }
+        
+        
+        configure()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showDetailController(notification:)), name: Notification.Name("cellTap"), object: nil)
+        
+        
+    }
+    
+    @objc private func showDetailController(notification: Notification) {
+        
+        print("ID:", notification)
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let vc = main.instantiateViewController(withIdentifier: "DetailCellViewController")
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
     
     func configure(){
@@ -35,14 +40,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate{
         tableView.register(CustomMainInfoTableViewCell.nib(), forCellReuseIdentifier: CustomMainInfoTableViewCell.identifier )
     }
     
-    func exapmpleModels(){
-        model.append(ExapleModel(date: "2222", leftImagName: "dinamo", rightImagName: "psg", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5))
-        model.append(ExapleModel(date: "2022", leftImagName: "manchester", rightImagName: "real", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5))
-        model.append(ExapleModel(date: "2022", leftImagName: "dinamo", rightImagName: "psg", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5))
-        model.append(ExapleModel(date: "2022", leftImagName: "psg", rightImagName: "dinamo", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5))
-        model.append(ExapleModel(date: "2022", leftImagName: "real", rightImagName: "dinamo", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5))
-        model.append(ExapleModel(date: "2022", leftImagName: "psg", rightImagName: "dinamo", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5))
-    }
+    
     
     
     
@@ -75,7 +73,7 @@ extension MainViewController: UITableViewDelegate{
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        
     }
     
     

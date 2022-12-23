@@ -11,18 +11,18 @@ class MainInfoCollectionViewCell: UICollectionViewCell{
     @IBOutlet var srcondComandLabel: UILabel!
     @IBOutlet var firstPointLabel: UILabel!
     @IBOutlet var secondPointLabel: UILabel!
-   
-
+    
+    
     static let identifire = "MainInfoCollectionViewCell"
     
-
+    
     static func nib()-> UINib{
         return UINib(nibName: "MainInfoCollectionViewCell", bundle: nil)
         
     }
     
-
-    override func awakeFromNib() { 
+    
+    override func awakeFromNib() {
         super.awakeFromNib()
         
         
@@ -42,6 +42,6 @@ class MainInfoCollectionViewCell: UICollectionViewCell{
         
         
     }
-
-   
+    
+    
 }
