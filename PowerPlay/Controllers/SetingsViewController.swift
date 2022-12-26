@@ -1,5 +1,5 @@
 import UIKit
-
+import AudioToolbox
 class SetingsViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -17,6 +17,8 @@ class SetingsViewController: UIViewController {
     }
     
     @IBAction func pressedButtonVibration(_ sender: UIButton) {
+        
+    UIDevice.vibrate()
     }
     
     
@@ -28,4 +30,9 @@ class SetingsViewController: UIViewController {
         }
     }
     
+}
+extension UIDevice {
+    static func vibrate() {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+    }
 }

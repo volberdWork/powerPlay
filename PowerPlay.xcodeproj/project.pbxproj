@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD4831FF295A289C00E9C4FC /* Periods.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831ED295A289B00E9C4FC /* Periods.swift */; };
+		BD483200295A289C00E9C4FC /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831EE295A289B00E9C4FC /* Score.swift */; };
+		BD483201295A289C00E9C4FC /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831EF295A289B00E9C4FC /* League.swift */; };
+		BD483202295A289C00E9C4FC /* Fulltime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831F0295A289B00E9C4FC /* Fulltime.swift */; };
+		BD483203295A289C00E9C4FC /* Halftime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831F1295A289B00E9C4FC /* Halftime.swift */; };
+		BD483204295A289C00E9C4FC /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831F2295A289B00E9C4FC /* Json4Swift_Base.swift */; };
+		BD483205295A289C00E9C4FC /* Away.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831F3295A289C00E9C4FC /* Away.swift */; };
+		BD483206295A289C00E9C4FC /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831F4295A289C00E9C4FC /* Goals.swift */; };
+		BD483207295A289C00E9C4FC /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831F5295A289C00E9C4FC /* Parameters.swift */; };
+		BD483208295A289C00E9C4FC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831F6295A289C00E9C4FC /* Response.swift */; };
+		BD483209295A289C00E9C4FC /* Extratime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831F7295A289C00E9C4FC /* Extratime.swift */; };
+		BD48320A295A289C00E9C4FC /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831F8295A289C00E9C4FC /* Home.swift */; };
+		BD48320B295A289C00E9C4FC /* Penalty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831F9295A289C00E9C4FC /* Penalty.swift */; };
+		BD48320C295A289C00E9C4FC /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831FA295A289C00E9C4FC /* Paging.swift */; };
+		BD48320D295A289C00E9C4FC /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831FB295A289C00E9C4FC /* Status.swift */; };
+		BD48320E295A289C00E9C4FC /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831FC295A289C00E9C4FC /* Teams.swift */; };
+		BD48320F295A289C00E9C4FC /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831FD295A289C00E9C4FC /* Fixture.swift */; };
+		BD483210295A289C00E9C4FC /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4831FE295A289C00E9C4FC /* Venue.swift */; };
 		BD6B2A0E2955FE750007F084 /* PreloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */; };
 		BD928BD629524D3500600A1C /* InfoCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD928BD529524D3500600A1C /* InfoCustomView.swift */; };
 		BD928BD929524D5500600A1C /* InfoCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD928BD829524D5500600A1C /* InfoCustomView.xib */; };
@@ -30,6 +48,24 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD4831ED295A289B00E9C4FC /* Periods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Periods.swift; sourceTree = "<group>"; };
+		BD4831EE295A289B00E9C4FC /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		BD4831EF295A289B00E9C4FC /* League.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
+		BD4831F0295A289B00E9C4FC /* Fulltime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fulltime.swift; sourceTree = "<group>"; };
+		BD4831F1295A289B00E9C4FC /* Halftime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Halftime.swift; sourceTree = "<group>"; };
+		BD4831F2295A289B00E9C4FC /* Json4Swift_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
+		BD4831F3295A289C00E9C4FC /* Away.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Away.swift; sourceTree = "<group>"; };
+		BD4831F4295A289C00E9C4FC /* Goals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
+		BD4831F5295A289C00E9C4FC /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
+		BD4831F6295A289C00E9C4FC /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		BD4831F7295A289C00E9C4FC /* Extratime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extratime.swift; sourceTree = "<group>"; };
+		BD4831F8295A289C00E9C4FC /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		BD4831F9295A289C00E9C4FC /* Penalty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Penalty.swift; sourceTree = "<group>"; };
+		BD4831FA295A289C00E9C4FC /* Paging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
+		BD4831FB295A289C00E9C4FC /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		BD4831FC295A289C00E9C4FC /* Teams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
+		BD4831FD295A289C00E9C4FC /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
+		BD4831FE295A289C00E9C4FC /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderViewController.swift; sourceTree = "<group>"; };
 		BD928BD529524D3500600A1C /* InfoCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCustomView.swift; sourceTree = "<group>"; };
 		BD928BD829524D5500600A1C /* InfoCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCustomView.xib; sourceTree = "<group>"; };
@@ -65,6 +101,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD4831EC295A287C00E9C4FC /* APIModels */ = {
+			isa = PBXGroup;
+			children = (
+				BD4831F3295A289C00E9C4FC /* Away.swift */,
+				BD4831F7295A289C00E9C4FC /* Extratime.swift */,
+				BD4831FD295A289C00E9C4FC /* Fixture.swift */,
+				BD4831F0295A289B00E9C4FC /* Fulltime.swift */,
+				BD4831F4295A289C00E9C4FC /* Goals.swift */,
+				BD4831F1295A289B00E9C4FC /* Halftime.swift */,
+				BD4831F8295A289C00E9C4FC /* Home.swift */,
+				BD4831F2295A289B00E9C4FC /* Json4Swift_Base.swift */,
+				BD4831EF295A289B00E9C4FC /* League.swift */,
+				BD4831FA295A289C00E9C4FC /* Paging.swift */,
+				BD4831F5295A289C00E9C4FC /* Parameters.swift */,
+				BD4831F9295A289C00E9C4FC /* Penalty.swift */,
+				BD4831ED295A289B00E9C4FC /* Periods.swift */,
+				BD4831F6295A289C00E9C4FC /* Response.swift */,
+				BD4831EE295A289B00E9C4FC /* Score.swift */,
+				BD4831FB295A289C00E9C4FC /* Status.swift */,
+				BD4831FC295A289C00E9C4FC /* Teams.swift */,
+				BD4831FE295A289C00E9C4FC /* Venue.swift */,
+			);
+			path = APIModels;
+			sourceTree = "<group>";
+		};
 		BD928BD729524D3B00600A1C /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +189,7 @@
 		BD928BED2954538500600A1C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BD4831EC295A287C00E9C4FC /* APIModels */,
 				BD928BEE295453E000600A1C /* ExapleModel.swift */,
 			);
 			path = Models;
@@ -250,17 +312,35 @@
 			files = (
 				BD6B2A0E2955FE750007F084 /* PreloaderViewController.swift in Sources */,
 				BDA18F7F29521ADE00C0EAE2 /* DetailCellViewController.swift in Sources */,
+				BD4831FF295A289C00E9C4FC /* Periods.swift in Sources */,
+				BD483205295A289C00E9C4FC /* Away.swift in Sources */,
 				BD928BD629524D3500600A1C /* InfoCustomView.swift in Sources */,
+				BD483209295A289C00E9C4FC /* Extratime.swift in Sources */,
+				BD483200295A289C00E9C4FC /* Score.swift in Sources */,
+				BD48320B295A289C00E9C4FC /* Penalty.swift in Sources */,
+				BD483203295A289C00E9C4FC /* Halftime.swift in Sources */,
+				BD48320C295A289C00E9C4FC /* Paging.swift in Sources */,
 				BD928BE02953A7B700600A1C /* MainViewController.swift in Sources */,
 				BDA18F7B29521ADE00C0EAE2 /* AppDelegate.swift in Sources */,
 				BDA18F7D29521ADE00C0EAE2 /* SceneDelegate.swift in Sources */,
 				BD928BF9295489D600600A1C /* SavedTableViewCell.swift in Sources */,
 				BD928BE92953C76200600A1C /* MainInfoCollectionViewCell.swift in Sources */,
+				BD483201295A289C00E9C4FC /* League.swift in Sources */,
+				BD483202295A289C00E9C4FC /* Fulltime.swift in Sources */,
+				BD483210295A289C00E9C4FC /* Venue.swift in Sources */,
+				BD48320F295A289C00E9C4FC /* Fixture.swift in Sources */,
+				BD483206295A289C00E9C4FC /* Goals.swift in Sources */,
+				BD48320E295A289C00E9C4FC /* Teams.swift in Sources */,
 				BD928BE32953C55100600A1C /* CustomMainInfoTableViewCell.swift in Sources */,
 				BD928BEF295453E000600A1C /* ExapleModel.swift in Sources */,
 				BD928BF52954890F00600A1C /* SavedViewController.swift in Sources */,
 				BD928BF129546E4600600A1C /* SetingsViewController.swift in Sources */,
+				BD483204295A289C00E9C4FC /* Json4Swift_Base.swift in Sources */,
+				BD48320D295A289C00E9C4FC /* Status.swift in Sources */,
+				BD483208295A289C00E9C4FC /* Response.swift in Sources */,
+				BD48320A295A289C00E9C4FC /* Home.swift in Sources */,
 				BD928BF32954736600600A1C /* TermsOfServiceViewController.swift in Sources */,
+				BD483207295A289C00E9C4FC /* Parameters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +487,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6R59JHT6PY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PowerPlay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -434,6 +515,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6R59JHT6PY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PowerPlay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
