@@ -1,27 +1,24 @@
 import UIKit
+import Alamofire
 
-class MainViewController: UIViewController, UICollectionViewDelegate{
-    @IBOutlet var tableView: UITableView!
+class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+   
+    @IBOutlet var collectionView: UICollectionView!
     
-    var model = [ExapleModel(date: "2222", leftImagName: "dinamo", rightImagName: "psg", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5),
-                 ExapleModel(date: "2022", leftImagName: "manchester", rightImagName: "real", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5),
-                 ExapleModel(date: "2222", leftImagName: "dinamo", rightImagName: "psg", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5),
-                 ExapleModel(date: "2022", leftImagName: "manchester", rightImagName: "real", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5),
-                 ExapleModel(date: "2222", leftImagName: "dinamo", rightImagName: "psg", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5),
-                 ExapleModel(date: "2022", leftImagName: "manchester", rightImagName: "real", fistComandName: "Monchester Unated", secondComandName: "Real Dreams Unated", firstPoint: 2, secondPoint: 5)]
     
+    
+    var array: [ResponseResult] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         configure()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(showDetailController(notification:)), name: Notification.Name("cellTap"), object: nil)
-        
+        loadDataFromAPI()
+        collectionView.dataSource = self
+        collectionView.delegate = self
         
     }
+    
     
     @objc private func showDetailController(notification: Notification) {
         
@@ -36,48 +33,54 @@ class MainViewController: UIViewController, UICollectionViewDelegate{
     
     func configure(){
         view.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
-        tableView.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
-        tableView.register(CustomMainInfoTableViewCell.nib(), forCellReuseIdentifier: CustomMainInfoTableViewCell.identifier )
-    }
-    
-    
-    
-    
-    
-}
-
-
-
-extension MainViewController: UITableViewDataSource{
-    
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomMainInfoTableViewCell.identifier, for: indexPath) as! CustomMainInfoTableViewCell
         
-        cell.configure(with: model)
+    }
+    
+    func loadDataFromAPI(){
+            
+            let url = "https://v3.football.api-sports.io/fixtures?next=50"
+            let headers: HTTPHeaders = ["x-apisports-key":"9a49740c5034d7ee252d1e1419a10faa"]
+            
+            AF.request(url, method: .get, headers: headers).responseJSON { responseJSON in
+                let decoder = JSONDecoder()
+                guard let respponseData = responseJSON.data else {return}
+                
+                do {
+                    let data = try decoder.decode(InfoTrend.self, from: respponseData)
+                    self.array = data.response
+                    self.collectionView.reloadData()
+                } catch {
+                    print("Щось пішло не так")
+                }
+                
+            }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        array.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainInfoCollectionViewCell", for: indexPath) as! MainInfoCollectionViewCell
+        
+        cell.setupView(model: array[indexPath.row])
         return cell
     }
     
-}
-
-extension MainViewController: UITableViewDelegate{
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
-    }
-    
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 30
     }
     
     
     
+    }
+ 
+
+
+
+extension MainViewController: UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return  CGSize(width: 185, height: 235)
+    }
 }
-
-

@@ -1,5 +1,4 @@
 import UIKit
-
 class MainInfoCollectionViewCell: UICollectionViewCell{
     
     @IBOutlet var firstView: UIView!
@@ -30,18 +29,16 @@ class MainInfoCollectionViewCell: UICollectionViewCell{
     
     // MARK: - Public Methods
     
-    public func setupView(model: ExapleModel){
-        self.dateLabel.text = model.date
-        self.firstComandLabel.text = "\(model.fistComandName)"
-        self.srcondComandLabel.text = model.secondComandName
-        self.secondPointLabel.text = "\(model.secondPoint)"
-        self.firstPointLabel.text = "\(model.firstPoint)"
-        self.leftImage.image = UIImage(named: "\(model.leftImagName)")
-        self.rightImage.image = UIImage(named: "\(model.rightImagName)")
+    public func setupView(model: ResponseResult){
+        self.dateLabel.text = model.fixture?.date ?? ""
+        self.firstComandLabel.text = model.teams?.home?.name ?? ""
+        self.srcondComandLabel.text = model.teams?.away?.name ?? ""
+        self.secondPointLabel.text = "0"
+        self.firstPointLabel.text = "0"
         dateView.layer.cornerRadius = 10
-        
-        
     }
+    
+    
     
     
 }

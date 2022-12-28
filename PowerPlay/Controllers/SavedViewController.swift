@@ -4,7 +4,7 @@ class SavedViewController: UIViewController {
     
     
     @IBOutlet var tableView: UITableView!
-    var model = [ExapleModel]()
+    var model = [ResponseResult]()
     
     
     override func viewDidLoad() {
