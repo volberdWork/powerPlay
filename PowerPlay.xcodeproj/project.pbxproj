@@ -9,13 +9,9 @@
 /* Begin PBXBuildFile section */
 		BD483213295A480400E9C4FC /* LiveDataBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD483212295A480400E9C4FC /* LiveDataBuffer.swift */; };
 		BD610054295B294600A31DF4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BD610053295B294600A31DF4 /* Podfile */; };
-		BD61007A295B6B8E00A31DF4 /* APIParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD610079295B6B8E00A31DF4 /* APIParsing.swift */; };
 		BD6B2A0E2955FE750007F084 /* PreloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */; };
-		BD928BD629524D3500600A1C /* InfoCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD928BD529524D3500600A1C /* InfoCustomView.swift */; };
-		BD928BD929524D5500600A1C /* InfoCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD928BD829524D5500600A1C /* InfoCustomView.xib */; };
 		BD928BE02953A7B700600A1C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD928BDF2953A7B700600A1C /* MainViewController.swift */; };
 		BD928BE92953C76200600A1C /* MainInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD928BE72953C76200600A1C /* MainInfoCollectionViewCell.swift */; };
-		BD928BEF295453E000600A1C /* ExapleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD928BEE295453E000600A1C /* ExapleModel.swift */; };
 		BD928BF129546E4600600A1C /* SetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD928BF029546E4600600A1C /* SetingsViewController.swift */; };
 		BD928BF32954736600600A1C /* TermsOfServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD928BF22954736600600A1C /* TermsOfServiceViewController.swift */; };
 		BD928BF52954890F00600A1C /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD928BF42954890F00600A1C /* SavedViewController.swift */; };
@@ -36,13 +32,9 @@
 		8508C70109AA294E4A094E66 /* Pods-PowerPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerPlay.release.xcconfig"; path = "Target Support Files/Pods-PowerPlay/Pods-PowerPlay.release.xcconfig"; sourceTree = "<group>"; };
 		BD483212295A480400E9C4FC /* LiveDataBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDataBuffer.swift; sourceTree = "<group>"; };
 		BD610053295B294600A31DF4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
-		BD610079295B6B8E00A31DF4 /* APIParsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParsing.swift; sourceTree = "<group>"; };
 		BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderViewController.swift; sourceTree = "<group>"; };
-		BD928BD529524D3500600A1C /* InfoCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCustomView.swift; sourceTree = "<group>"; };
-		BD928BD829524D5500600A1C /* InfoCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCustomView.xib; sourceTree = "<group>"; };
 		BD928BDF2953A7B700600A1C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BD928BE72953C76200600A1C /* MainInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfoCollectionViewCell.swift; sourceTree = "<group>"; };
-		BD928BEE295453E000600A1C /* ExapleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExapleModel.swift; sourceTree = "<group>"; };
 		BD928BF029546E4600600A1C /* SetingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetingsViewController.swift; sourceTree = "<group>"; };
 		BD928BF22954736600600A1C /* TermsOfServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceViewController.swift; sourceTree = "<group>"; };
 		BD928BF42954890F00600A1C /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
@@ -81,26 +73,9 @@
 		BD4831EC295A287C00E9C4FC /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				BD483212295A480400E9C4FC /* LiveDataBuffer.swift */,
 			);
 			path = APIModels;
-			sourceTree = "<group>";
-		};
-		BD483211295A47F200E9C4FC /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				BD483212295A480400E9C4FC /* LiveDataBuffer.swift */,
-				BD610079295B6B8E00A31DF4 /* APIParsing.swift */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
-		BD928BD729524D3B00600A1C /* CustomView */ = {
-			isa = PBXGroup;
-			children = (
-				BD928BD529524D3500600A1C /* InfoCustomView.swift */,
-				BD928BD829524D5500600A1C /* InfoCustomView.xib */,
-			);
-			path = CustomView;
 			sourceTree = "<group>";
 		};
 		BD928BDA29526B3400600A1C /* Controllers */ = {
@@ -128,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				BDA18F8029521ADE00C0EAE2 /* Main.storyboard */,
-				BD928BD729524D3B00600A1C /* CustomView */,
 				BD928BEC295452EF00600A1C /* xibs */,
 			);
 			path = View;
@@ -147,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				BD4831EC295A287C00E9C4FC /* APIModels */,
-				BD928BEE295453E000600A1C /* ExapleModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,7 +155,6 @@
 		BDA18F7929521ADE00C0EAE2 /* PowerPlay */ = {
 			isa = PBXGroup;
 			children = (
-				BD483211295A47F200E9C4FC /* Networking */,
 				BD928BED2954538500600A1C /* Models */,
 				BD928BDA29526B3400600A1C /* Controllers */,
 				BD928BEB295452D800600A1C /* View */,
@@ -266,7 +238,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDA18F8729521AE000C0EAE2 /* LaunchScreen.storyboard in Resources */,
-				BD928BD929524D5500600A1C /* InfoCustomView.xib in Resources */,
 				BD610054295B294600A31DF4 /* Podfile in Resources */,
 				BDA18F8429521AE000C0EAE2 /* Assets.xcassets in Resources */,
 				BDA18F8229521ADE00C0EAE2 /* Main.storyboard in Resources */,
@@ -325,15 +296,12 @@
 			files = (
 				BD6B2A0E2955FE750007F084 /* PreloaderViewController.swift in Sources */,
 				BDA18F7F29521ADE00C0EAE2 /* DetailCellViewController.swift in Sources */,
-				BD928BD629524D3500600A1C /* InfoCustomView.swift in Sources */,
 				BD928BE02953A7B700600A1C /* MainViewController.swift in Sources */,
 				BDA18F7B29521ADE00C0EAE2 /* AppDelegate.swift in Sources */,
 				BDA18F7D29521ADE00C0EAE2 /* SceneDelegate.swift in Sources */,
 				BD928BF9295489D600600A1C /* SavedTableViewCell.swift in Sources */,
 				BD928BE92953C76200600A1C /* MainInfoCollectionViewCell.swift in Sources */,
 				BD483213295A480400E9C4FC /* LiveDataBuffer.swift in Sources */,
-				BD61007A295B6B8E00A31DF4 /* APIParsing.swift in Sources */,
-				BD928BEF295453E000600A1C /* ExapleModel.swift in Sources */,
 				BD928BF52954890F00600A1C /* SavedViewController.swift in Sources */,
 				BD928BF129546E4600600A1C /* SetingsViewController.swift in Sources */,
 				BD928BF32954736600600A1C /* TermsOfServiceViewController.swift in Sources */,
