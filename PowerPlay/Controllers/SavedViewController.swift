@@ -1,5 +1,5 @@
 import UIKit
-
+import RealmSwift
 class SavedViewController: UIViewController {
     
     
@@ -10,7 +10,6 @@ class SavedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        
         
     }
     

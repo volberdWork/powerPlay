@@ -4,10 +4,9 @@ import Kingfisher
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var firstCollectionView: UICollectionView!
     
-    
-    
+    @IBOutlet var secondCollectionView: UICollectionView!
     var array: [ResponseResult] = []
     
     override func viewDidLoad() {
@@ -15,9 +14,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         configure()
         
         loadDataFromAPI()
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        
+      
+       
     }
     
     
@@ -36,7 +34,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             do {
                 let data = try decoder.decode(InfoTrend.self, from: respponseData)
                 self.array = data.response
-                self.collectionView.reloadData()
+                self.firstCollectionView.reloadData()
             } catch {
                 print("Щось пішло не так")
             }
@@ -54,17 +52,31 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     
-    
+
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        array.count
+        if (collectionView == firstCollectionView){
+            return array.count
+        }
+        return 10
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainInfoCollectionViewCell", for: indexPath) as! MainInfoCollectionViewCell
+        if (collectionView == firstCollectionView){
+            let cell = firstCollectionView.dequeueReusableCell(withReuseIdentifier: "MainFirstInfoCollectionViewCell", for: indexPath) as! MainFirstInfoCollectionViewCell
+            
+           cell.firstSetupView(model: array[indexPath.row])
+            collectionView.backgroundColor = self.view.backgroundColor
+            return cell
+        }
+       
+        let cell2 = secondCollectionView.dequeueReusableCell(withReuseIdentifier: "SecondCollectionViewCell", for: indexPath) as! SecondCollectionViewCell
         
-        cell.setupView(model: array[indexPath.row])
-        return cell
+        //cell2.setupView(model: array[indexPath.row])
+        collectionView.backgroundColor = self.view.backgroundColor
+       
+        return cell2
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -72,23 +84,24 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let data = array[indexPath.row]
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = main.instantiateViewController(withIdentifier: "DetailCellViewController") as? DetailCellViewController {
-            navigationController?.pushViewController(vc, animated: true)
-            vc.yearText = String(describing: data.league?.season ?? 0)
-            vc.awayTeamName = data.teams?.away?.name ?? ""
-            vc.homeTeamName = data.teams?.home?.name ?? ""
-            vc.awayPoint = data.goals?.away ?? 0
-            vc.homePoint = data.goals?.home ?? 0
-            vc.seasonText = "Season \(String(describing: data.league?.season ?? 0))"
-            vc.leagueText = data.league?.name ?? ""
-            vc.dataText = changeDateFormat(dateString: (data.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd MMMM HH:mm")
-            vc.awaylogoLink = data.teams?.away?.logo ?? ""
-            vc.homeLogoLink = data.teams?.home?.logo ?? ""
-        }
-        
-        
+//        let data = array[indexPath.row]
+//        let main = UIStoryboard(name: "Main", bundle: nil)
+//        if let vc = main.instantiateViewController(withIdentifier: "DetailCellViewController") as? DetailCellViewController {
+//            navigationController?.pushViewController(vc, animated: true)
+//            vc.yearText = String(describing: data.league?.season ?? 0)
+//            vc.awayTeamName = data.teams?.away?.name ?? ""
+//            vc.homeTeamName = data.teams?.home?.name ?? ""
+//            vc.awayPoint = data.goals?.away ?? 0
+//            vc.homePoint = data.goals?.home ?? 0
+//            vc.seasonText = "Season \(String(describing: data.league?.season ?? 0))"
+//            vc.leagueText = data.league?.name ?? ""
+//            vc.dataText = changeDateFormat(dateString: (data.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd MMMM HH:mm")
+//            vc.awaylogoLink = data.teams?.away?.logo ?? ""
+//            vc.homeLogoLink = data.teams?.home?.logo ?? ""
+//
+//        }
+
+
     }
 }
 
