@@ -1,5 +1,6 @@
 import UIKit
 import Alamofire
+import Kingfisher
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
@@ -43,6 +44,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
+    
+    
+    
+    
     func configure(){
         view.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
         
@@ -79,6 +84,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             vc.seasonText = "Season \(String(describing: data.league?.season ?? 0))"
             vc.leagueText = data.league?.name ?? ""
             vc.dataText = data.fixture?.date ?? ""
+            vc.awaylogoLink = data.teams?.away?.logo ?? ""
+            vc.homeLogoLink = data.teams?.home?.logo ?? ""
         }
         
         

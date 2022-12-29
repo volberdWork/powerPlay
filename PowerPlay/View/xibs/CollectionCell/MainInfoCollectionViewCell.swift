@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 class MainInfoCollectionViewCell: UICollectionViewCell{
     
     @IBOutlet var firstView: UIView!
@@ -33,6 +34,8 @@ class MainInfoCollectionViewCell: UICollectionViewCell{
         self.dateLabel.text = model.fixture?.date ?? ""
         self.firstComandLabel.text = model.teams?.home?.name ?? ""
         self.srcondComandLabel.text = model.teams?.away?.name ?? ""
+        self.leftImage.kf.setImage(with: URL(string: model.teams?.home?.logo ?? ""))
+        self.rightImage.kf.setImage(with: URL(string: model.teams?.away?.logo ?? ""))
         self.secondPointLabel.text = "0"
         self.firstPointLabel.text = "0"
         dateView.layer.cornerRadius = 10

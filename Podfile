@@ -7,5 +7,6 @@ target 'PowerPlay' do
 
   # Pods for PowerPlay
 pod 'Alamofire'
-
+pod 'SDWebImage'
+pod 'Kingfisher'
 end

@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class DetailCellViewController: UIViewController {
     
@@ -25,6 +26,9 @@ class DetailCellViewController: UIViewController {
     var dataText = ""
     var homePoint = 0
     var awayPoint = 0
+    var awaylogoLink = ""
+    var homeLogoLink = ""
+    
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +53,8 @@ class DetailCellViewController: UIViewController {
         awayNameLabel.text = awayTeamName
         dateLabel.text = dataText
         pointLabel.text = "\(homePoint):\(awayPoint)"
+        awayImage.kf.setImage(with: URL(string: awaylogoLink))
+        homeImage.kf.setImage(with: URL(string: homeLogoLink))
     }
     
 }
