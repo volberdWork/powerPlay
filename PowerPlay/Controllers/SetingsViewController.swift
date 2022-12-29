@@ -18,7 +18,7 @@ class SetingsViewController: UIViewController {
     
     @IBAction func pressedButtonVibration(_ sender: UIButton) {
         
-    UIDevice.vibrate()
+        UIDevice.vibrate()
     }
     
     

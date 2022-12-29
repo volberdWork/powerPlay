@@ -83,7 +83,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             vc.homePoint = data.goals?.home ?? 0
             vc.seasonText = "Season \(String(describing: data.league?.season ?? 0))"
             vc.leagueText = data.league?.name ?? ""
-            vc.dataText = data.fixture?.date ?? ""
+            vc.dataText = changeDateFormat(dateString: (data.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd MMMM HH:mm")
             vc.awaylogoLink = data.teams?.away?.logo ?? ""
             vc.homeLogoLink = data.teams?.home?.logo ?? ""
         }
@@ -91,7 +91,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
 }
- 
+
 
 
 

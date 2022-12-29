@@ -29,7 +29,7 @@ class DetailCellViewController: UIViewController {
     var awaylogoLink = ""
     var homeLogoLink = ""
     
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

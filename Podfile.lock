@@ -1,6 +1,11 @@
 PODS:
   - Alamofire (5.6.2)
   - Kingfisher (7.4.1)
+  - Realm (10.32.1):
+    - Realm/Headers (= 10.32.1)
+  - Realm/Headers (10.32.1)
+  - RealmSwift (10.32.1):
+    - Realm (= 10.32.1)
   - SDWebImage (5.13.4):
     - SDWebImage/Core (= 5.13.4)
   - SDWebImage/Core (5.13.4)
@@ -8,19 +13,24 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - Kingfisher
+  - RealmSwift
   - SDWebImage
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
+    - Realm
+    - RealmSwift
     - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
+  Realm: fd821b81e5479be497cc5bca2e020f707d8323eb
+  RealmSwift: 8635e4cc524790916d72b0ffa51c1a91f4ec9668
   SDWebImage: e5cc87bf736e60f49592f307bdf9e157189298a3
 
-PODFILE CHECKSUM: 1dcd9a4ee05503db8d555523c91d9cda087c8fad
+PODFILE CHECKSUM: 031c394bbfe333246bd8036eee7710a4ff857fc4
 
 COCOAPODS: 1.11.3
