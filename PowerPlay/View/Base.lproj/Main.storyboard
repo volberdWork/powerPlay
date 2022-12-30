@@ -12,7 +12,6 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="PowerPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
@@ -379,6 +378,15 @@
                                                 <constraint firstItem="0ko-C8-gdp" firstAttribute="leading" secondItem="efR-Vh-J0u" secondAttribute="leading" id="u2p-ti-5IO"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel1" destination="GMX-hg-heE" id="27u-Wc-flO"/>
+                                            <outlet property="firstComandLabel" destination="nUB-JC-5ce" id="i0c-Th-eJ6"/>
+                                            <outlet property="firstPointLabel" destination="si3-23-iUo" id="v5u-oP-UBv"/>
+                                            <outlet property="leftImage" destination="tWs-5W-jgq" id="jiY-CF-41B"/>
+                                            <outlet property="rightImage" destination="aSZ-WG-K8C" id="XTi-FN-ND3"/>
+                                            <outlet property="secondPointLabel" destination="gL9-84-eMY" id="5B7-9t-XIg"/>
+                                            <outlet property="srcondComandLabel" destination="Cy1-ob-CD6" id="n3x-Pq-x4q"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -414,6 +422,7 @@
                         <outlet property="secondCollectionView" destination="Sor-xO-016" id="4L6-D8-T16"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1960" y="3.5545023696682461"/>
         </scene>
