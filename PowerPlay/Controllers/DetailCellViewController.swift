@@ -1,6 +1,5 @@
 import UIKit
 import Kingfisher
-import RealmSwift
 class DetailCellViewController: UIViewController {
     
     @IBOutlet var darkRectangle: UIView!
@@ -29,8 +28,6 @@ class DetailCellViewController: UIViewController {
     var awaylogoLink = ""
     var homeLogoLink = ""
     
-    var realm = try? Realm()
-    let dataRealm = LiveDataRealm()
     
     
     override func viewDidLoad() {

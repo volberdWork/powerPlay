@@ -5,5 +5,4 @@ target 'PowerPlay' do
 
 pod 'Alamofire'
 pod 'Kingfisher'
-pod 'RealmSwift'
 end

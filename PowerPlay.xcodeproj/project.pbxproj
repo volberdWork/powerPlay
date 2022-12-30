@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33899D149EAF961C646501C1 /* Pods_PowerPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7824C346028FE75CE7E5127 /* Pods_PowerPlay.framework */; };
+		9AEFC888B12089749E5B8323 /* Pods_PowerPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79DB5BF884BCCFDC108FF3DF /* Pods_PowerPlay.framework */; };
 		BD17ED30295DC1CE004EECB9 /* LiveDataRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD17ED2F295DC1CE004EECB9 /* LiveDataRealm.swift */; };
 		BD483213295A480400E9C4FC /* LiveDataBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD483212295A480400E9C4FC /* LiveDataBuffer.swift */; };
 		BD610054295B294600A31DF4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BD610053295B294600A31DF4 /* Podfile */; };
@@ -30,11 +30,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6835809FF922B86560434CE0 /* Pods-PowerPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerPlay.release.xcconfig"; path = "Target Support Files/Pods-PowerPlay/Pods-PowerPlay.release.xcconfig"; sourceTree = "<group>"; };
-		9F848D301605ABFC0B3F8185 /* Pods-PowerPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerPlay.debug.xcconfig"; path = "Target Support Files/Pods-PowerPlay/Pods-PowerPlay.debug.xcconfig"; sourceTree = "<group>"; };
+		0532D30F75C2F3808ACE03BE /* Pods-PowerPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerPlay.release.xcconfig"; path = "Target Support Files/Pods-PowerPlay/Pods-PowerPlay.release.xcconfig"; sourceTree = "<group>"; };
+		581147F4E2B552B5C1747763 /* Pods-PowerPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerPlay.debug.xcconfig"; path = "Target Support Files/Pods-PowerPlay/Pods-PowerPlay.debug.xcconfig"; sourceTree = "<group>"; };
+		79DB5BF884BCCFDC108FF3DF /* Pods_PowerPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD17ED2F295DC1CE004EECB9 /* LiveDataRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDataRealm.swift; sourceTree = "<group>"; };
 		BD483212295A480400E9C4FC /* LiveDataBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDataBuffer.swift; sourceTree = "<group>"; };
-		BD610053295B294600A31DF4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		BD610053295B294600A31DF4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderViewController.swift; sourceTree = "<group>"; };
 		BD7336CF295DA35100369C1F /* ChangeDateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDateFormat.swift; sourceTree = "<group>"; };
 		BD88BDAD295E3E1300DEDB0F /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -53,7 +54,6 @@
 		BDA18F8329521AE000C0EAE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDA18F8629521AE000C0EAE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDA18F8829521AE000C0EAE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C7824C346028FE75CE7E5127 /* Pods_PowerPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,17 +61,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33899D149EAF961C646501C1 /* Pods_PowerPlay.framework in Frameworks */,
+				9AEFC888B12089749E5B8323 /* Pods_PowerPlay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		221867F2D1027A8DA471AFC4 /* Frameworks */ = {
+		76B5DA4E68F943C0C56F307D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C7824C346028FE75CE7E5127 /* Pods_PowerPlay.framework */,
+				79DB5BF884BCCFDC108FF3DF /* Pods_PowerPlay.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -164,7 +164,7 @@
 				BDA18F7929521ADE00C0EAE2 /* PowerPlay */,
 				BDA18F7829521ADE00C0EAE2 /* Products */,
 				C729A79C9F85CDCA1B0D2690 /* Pods */,
-				221867F2D1027A8DA471AFC4 /* Frameworks */,
+				76B5DA4E68F943C0C56F307D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,8 +196,8 @@
 		C729A79C9F85CDCA1B0D2690 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9F848D301605ABFC0B3F8185 /* Pods-PowerPlay.debug.xcconfig */,
-				6835809FF922B86560434CE0 /* Pods-PowerPlay.release.xcconfig */,
+				581147F4E2B552B5C1747763 /* Pods-PowerPlay.debug.xcconfig */,
+				0532D30F75C2F3808ACE03BE /* Pods-PowerPlay.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -209,11 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDA18F8B29521AE000C0EAE2 /* Build configuration list for PBXNativeTarget "PowerPlay" */;
 			buildPhases = (
-				F0DC178E1A83F846189435EF /* [CP] Check Pods Manifest.lock */,
+				C1EDA4DFB8EA4FE9D18DCA1C /* [CP] Check Pods Manifest.lock */,
 				BDA18F7329521ADE00C0EAE2 /* Sources */,
 				BDA18F7429521ADE00C0EAE2 /* Frameworks */,
 				BDA18F7529521ADE00C0EAE2 /* Resources */,
-				21E56DBC2D54D2080BEDB0A4 /* [CP] Embed Pods Frameworks */,
+				EC66D89C1BE6449520633A1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,24 +273,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21E56DBC2D54D2080BEDB0A4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PowerPlay/Pods-PowerPlay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PowerPlay/Pods-PowerPlay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PowerPlay/Pods-PowerPlay-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F0DC178E1A83F846189435EF /* [CP] Check Pods Manifest.lock */ = {
+		C1EDA4DFB8EA4FE9D18DCA1C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -310,6 +293,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC66D89C1BE6449520633A1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PowerPlay/Pods-PowerPlay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PowerPlay/Pods-PowerPlay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PowerPlay/Pods-PowerPlay-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -474,7 +474,7 @@
 		};
 		BDA18F8C29521AE000C0EAE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F848D301605ABFC0B3F8185 /* Pods-PowerPlay.debug.xcconfig */;
+			baseConfigurationReference = 581147F4E2B552B5C1747763 /* Pods-PowerPlay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -503,7 +503,7 @@
 		};
 		BDA18F8D29521AE000C0EAE2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6835809FF922B86560434CE0 /* Pods-PowerPlay.release.xcconfig */;
+			baseConfigurationReference = 0532D30F75C2F3808ACE03BE /* Pods-PowerPlay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
