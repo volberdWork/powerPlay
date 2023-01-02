@@ -27,6 +27,7 @@
 		BD23503029630420000C5F59 /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23501E29630420000C5F59 /* Goals.swift */; };
 		BD23503129630420000C5F59 /* Away.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23501F29630420000C5F59 /* Away.swift */; };
 		BD23503229630420000C5F59 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23502029630420000C5F59 /* Fixture.swift */; };
+		BD235034296313D3000C5F59 /* LiveBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD235033296313D3000C5F59 /* LiveBase.swift */; };
 		BD610054295B294600A31DF4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BD610053295B294600A31DF4 /* Podfile */; };
 		BD6B2A0E2955FE750007F084 /* PreloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */; };
 		BD7336D0295DA35100369C1F /* ChangeDateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7336CF295DA35100369C1F /* ChangeDateFormat.swift */; };
@@ -69,6 +70,7 @@
 		BD23501E29630420000C5F59 /* Goals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
 		BD23501F29630420000C5F59 /* Away.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Away.swift; sourceTree = "<group>"; };
 		BD23502029630420000C5F59 /* Fixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
+		BD235033296313D3000C5F59 /* LiveBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBase.swift; sourceTree = "<group>"; };
 		BD610053295B294600A31DF4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderViewController.swift; sourceTree = "<group>"; };
 		BD7336CF295DA35100369C1F /* ChangeDateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDateFormat.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				BD2350122963041D000C5F59 /* FixtersBase.swift */,
 				BD23502029630420000C5F59 /* Fixture.swift */,
 				BD2350112963041D000C5F59 /* Fulltime.swift */,
+				BD235033296313D3000C5F59 /* LiveBase.swift */,
 				BD23501E29630420000C5F59 /* Goals.swift */,
 				BD23501B2963041F000C5F59 /* Halftime.swift */,
 				BD2350132963041E000C5F59 /* HeadToHeadBase.swift */,
@@ -390,6 +393,7 @@
 				BD23502329630420000C5F59 /* Fulltime.swift in Sources */,
 				BD23503029630420000C5F59 /* Goals.swift in Sources */,
 				BD23502929630420000C5F59 /* Home.swift in Sources */,
+				BD235034296313D3000C5F59 /* LiveBase.swift in Sources */,
 				BD23502F29630420000C5F59 /* Venue.swift in Sources */,
 				BD23502729630420000C5F59 /* Penalty.swift in Sources */,
 				BD928BF52954890F00600A1C /* SavedViewController.swift in Sources */,

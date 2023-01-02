@@ -72,6 +72,7 @@ class DetailCellViewController: UIViewController {
             vc.secondId = homeId
             vc.homeLogoLink = homeLogoLink
             vc.awaylogoLink = awaylogoLink
+            vc.title = "H2H"
         }
         
     

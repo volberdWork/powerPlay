@@ -8,19 +8,39 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet var secondCollectionView: UICollectionView!
     var array: [Response] = []
+    var liveArray: [Response] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
          configure()
-        
         liveData()
+        fixtersBase()
+        
 
         
         
     }
     
-    
     func liveData(){
+        let url = "https://v3.football.api-sports.io/fixtures?live=all"
+        let headers: HTTPHeaders = ["x-apisports-key":"9a49740c5034d7ee252d1e1419a10faa"]
+        AF.request(url, headers: headers).responseJSON { responseJSON in
+            let decoder = JSONDecoder()
+            guard let respponseData = responseJSON.data else {return}
+            print(respponseData)
+            do {
+                let data = try decoder.decode(LiveBase.self, from: respponseData)
+                self.liveArray = data.response!
+                self.firstCollectionView.reloadData()
+                
+            } catch {
+                print("Щось пішло не так")
+            }
+            
+        }
+    }
+    
+    func fixtersBase(){
         let url = "https://v3.football.api-sports.io/fixtures?next=50"
         let headers: HTTPHeaders = ["x-apisports-key":"9a49740c5034d7ee252d1e1419a10faa"]
         AF.request(url, headers: headers).responseJSON { responseJSON in
@@ -30,7 +50,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             do {
                 let data = try decoder.decode(FixtersBase.self, from: respponseData)
                 self.array = data.response!
-                self.firstCollectionView.reloadData()
+                self.secondCollectionView.reloadData()
                 
             } catch {
                 print("Щось пішло не так")
@@ -54,7 +74,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == firstCollectionView){
-            return array.count
+            return liveArray.count
         }
         return array.count
         
@@ -64,7 +84,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if (collectionView == firstCollectionView){
             let cell = firstCollectionView.dequeueReusableCell(withReuseIdentifier: "MainFirstInfoCollectionViewCell", for: indexPath) as! MainFirstInfoCollectionViewCell
             
-            cell.firstSetupView(model: array[indexPath.row])
+            cell.firstSetupView(model: liveArray[indexPath.row])
             collectionView.backgroundColor = self.view.backgroundColor
             return cell
         }
@@ -82,7 +102,27 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let data = array[indexPath.row]
+        if (collectionView == secondCollectionView){
+            let data = array[indexPath.row]
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            if let vc = main.instantiateViewController(withIdentifier: "DetailCellViewController") as? DetailCellViewController {
+                navigationController?.pushViewController(vc, animated: true)
+                vc.yearText = String(describing: data.league?.season ?? 0)
+                vc.awayTeamName = data.teams?.away?.name ?? ""
+                vc.homeTeamName = data.teams?.home?.name ?? ""
+                vc.awayPoint = data.goals?.away ?? 0
+                vc.homePoint = data.goals?.home ?? 0
+                vc.seasonText = "Season \(String(describing: data.league?.season ?? 0))"
+                vc.leagueText = data.league?.name ?? ""
+                vc.dataText = changeDateFormat(dateString: (data.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd MMMM HH:mm")
+                vc.awaylogoLink = data.teams?.away?.logo ?? ""
+                vc.homeLogoLink = data.teams?.home?.logo ?? ""
+                vc.awayId = data.teams?.away?.id ?? 0
+                vc.homeId = data.teams?.home?.id ?? 0
+                
+            }
+            }
+        let data = liveArray[indexPath.row]
         let main = UIStoryboard(name: "Main", bundle: nil)
         if let vc = main.instantiateViewController(withIdentifier: "DetailCellViewController") as? DetailCellViewController {
             navigationController?.pushViewController(vc, animated: true)
@@ -98,7 +138,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             vc.homeLogoLink = data.teams?.home?.logo ?? ""
             vc.awayId = data.teams?.away?.id ?? 0
             vc.homeId = data.teams?.home?.id ?? 0
-            
         }
         
         
