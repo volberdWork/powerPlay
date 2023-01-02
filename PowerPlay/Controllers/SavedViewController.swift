@@ -67,6 +67,8 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
         cell.homeNameLabel.text = data.teams?.home?.name ?? ""
         cell.dateLabel.text = changeDateFormat(dateString: (data.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd MMMM HH:mm")
         cell.pointsLabel.text = "\(String(describing: data.goals?.home ?? 0)):\(String(describing: data.goals?.away ?? 0))"
+        cell.awaylogoLink = data.teams?.away?.logo ?? ""
+        cell.homelogoLink = data.teams?.home?.logo ?? ""
         return cell
     }
     

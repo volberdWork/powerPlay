@@ -15,11 +15,14 @@ class SavedTableViewCell: UITableViewCell {
     
     @IBOutlet var awayNameLabel: UILabel!
     
+    var awaylogoLink = ""
+    var homelogoLink = ""
     
     
     static let identifier = "SavedTableViewCell"
     static func nib()-> UINib{
         UINib(nibName: "SavedTableViewCell", bundle: nil)
+        
     }
     
     
@@ -30,7 +33,8 @@ class SavedTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+        leftImage.kf.setImage(with: URL(string: awaylogoLink))
+        rightImage.kf.setImage(with: URL(string: homelogoLink))
     }
     
     
