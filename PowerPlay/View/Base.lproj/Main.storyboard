@@ -13,11 +13,10 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="PowerPlay" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PrI-tD-RQK">
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PrI-tD-RQK">
                                 <rect key="frame" x="0.0" y="91" width="390" height="753"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XcU-w1-tWM" userLabel="ContentView">
@@ -40,6 +39,9 @@
                                                 <buttonConfiguration key="configuration" style="plain">
                                                     <backgroundConfiguration key="background" image="setingIcon"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="AJG-DC-JGb" kind="presentation" id="jQH-jz-czc"/>
+                                                </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eQF-Y3-1Z6">
                                                 <rect key="frame" x="0.0" y="131" width="399" height="260"/>
@@ -404,41 +406,44 @@
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="eJr-ho-557" firstAttribute="leading" secondItem="XcU-w1-tWM" secondAttribute="leading" constant="26" id="0Z9-83-OeA"/>
-                                            <constraint firstItem="I6O-kW-5aM" firstAttribute="leading" secondItem="XcU-w1-tWM" secondAttribute="leading" id="36h-ZG-HCb"/>
-                                            <constraint firstAttribute="trailing" secondItem="eQF-Y3-1Z6" secondAttribute="trailing" id="7eZ-Qy-tUw"/>
                                             <constraint firstAttribute="height" constant="760" id="92H-vB-fXe"/>
+                                            <constraint firstItem="sgR-Kh-Xbc" firstAttribute="leading" secondItem="XcU-w1-tWM" secondAttribute="leading" constant="27" id="AKQ-a8-cfa"/>
+                                            <constraint firstItem="eJr-ho-557" firstAttribute="leading" secondItem="XcU-w1-tWM" secondAttribute="leading" constant="26" id="AyR-B0-OIT"/>
                                             <constraint firstItem="I6O-kW-5aM" firstAttribute="top" secondItem="eJr-ho-557" secondAttribute="bottom" id="Bo3-eJ-0L1"/>
-                                            <constraint firstAttribute="trailing" secondItem="I6O-kW-5aM" secondAttribute="trailing" id="DBr-ro-x9C"/>
+                                            <constraint firstItem="MzL-gs-kYY" firstAttribute="top" secondItem="XcU-w1-tWM" secondAttribute="top" constant="6" id="Fui-wI-U8w"/>
                                             <constraint firstItem="eQF-Y3-1Z6" firstAttribute="top" secondItem="sgR-Kh-Xbc" secondAttribute="bottom" constant="6" id="MfO-8t-aol"/>
-                                            <constraint firstItem="14q-OV-QHu" firstAttribute="top" secondItem="XcU-w1-tWM" secondAttribute="top" id="MnU-8J-S19"/>
-                                            <constraint firstItem="sgR-Kh-Xbc" firstAttribute="leading" secondItem="XcU-w1-tWM" secondAttribute="leading" constant="27" id="XDY-ac-rvK"/>
-                                            <constraint firstItem="eQF-Y3-1Z6" firstAttribute="leading" secondItem="XcU-w1-tWM" secondAttribute="leading" id="abV-8Q-yPY"/>
-                                            <constraint firstItem="14q-OV-QHu" firstAttribute="leading" secondItem="XcU-w1-tWM" secondAttribute="leading" constant="32" id="bFU-P8-cHD"/>
+                                            <constraint firstItem="14q-OV-QHu" firstAttribute="top" secondItem="XcU-w1-tWM" secondAttribute="top" id="O0g-en-8xv"/>
+                                            <constraint firstAttribute="trailing" secondItem="I6O-kW-5aM" secondAttribute="trailing" id="QbL-5p-KxV"/>
+                                            <constraint firstItem="eQF-Y3-1Z6" firstAttribute="leading" secondItem="XcU-w1-tWM" secondAttribute="leading" id="R4k-Y0-zTL"/>
+                                            <constraint firstAttribute="trailing" secondItem="MzL-gs-kYY" secondAttribute="trailing" constant="23" id="WyQ-9J-N5Y"/>
                                             <constraint firstItem="eJr-ho-557" firstAttribute="top" secondItem="eQF-Y3-1Z6" secondAttribute="bottom" id="d2w-2X-hf0"/>
+                                            <constraint firstItem="I6O-kW-5aM" firstAttribute="leading" secondItem="XcU-w1-tWM" secondAttribute="leading" id="kDM-h4-qgn"/>
+                                            <constraint firstItem="14q-OV-QHu" firstAttribute="leading" secondItem="XcU-w1-tWM" secondAttribute="leading" constant="32" id="kLd-vU-AfN"/>
                                             <constraint firstItem="sgR-Kh-Xbc" firstAttribute="top" secondItem="14q-OV-QHu" secondAttribute="bottom" constant="30" id="mdJ-qu-6XC"/>
-                                            <constraint firstAttribute="trailing" secondItem="MzL-gs-kYY" secondAttribute="trailing" constant="23" id="spf-Ii-M7D"/>
-                                            <constraint firstItem="MzL-gs-kYY" firstAttribute="top" secondItem="XcU-w1-tWM" secondAttribute="top" constant="6" id="xHK-kh-eAj"/>
+                                            <constraint firstAttribute="trailing" secondItem="eQF-Y3-1Z6" secondAttribute="trailing" id="psw-6v-cb9"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="XcU-w1-tWM" firstAttribute="leading" secondItem="PrI-tD-RQK" secondAttribute="leading" id="48V-hB-4W0"/>
-                                    <constraint firstAttribute="trailing" secondItem="XcU-w1-tWM" secondAttribute="trailing" id="LHv-Lb-SXR"/>
-                                    <constraint firstAttribute="bottom" secondItem="XcU-w1-tWM" secondAttribute="bottom" id="UKT-4E-bdh"/>
-                                    <constraint firstItem="XcU-w1-tWM" firstAttribute="top" secondItem="PrI-tD-RQK" secondAttribute="top" id="peN-vv-bCD"/>
+                                    <constraint firstItem="XcU-w1-tWM" firstAttribute="top" secondItem="PrI-tD-RQK" secondAttribute="top" id="QGn-Ql-gj4"/>
+                                    <constraint firstAttribute="trailing" secondItem="XcU-w1-tWM" secondAttribute="trailing" id="RSg-ej-g83"/>
+                                    <constraint firstAttribute="height" constant="753" id="Yp8-Hv-ZE7"/>
+                                    <constraint firstAttribute="bottom" secondItem="XcU-w1-tWM" secondAttribute="bottom" id="aTA-Zo-fK6"/>
+                                    <constraint firstItem="XcU-w1-tWM" firstAttribute="leading" secondItem="PrI-tD-RQK" secondAttribute="leading" id="cMq-WM-F2d"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.094117647058823528" green="0.098039215686274508" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="PrI-tD-RQK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2Zq-Au-vDP"/>
-                            <constraint firstAttribute="bottom" secondItem="PrI-tD-RQK" secondAttribute="bottom" id="rgR-NQ-E7Y"/>
-                            <constraint firstItem="XcU-w1-tWM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1.02308" id="sdW-yD-M08"/>
-                            <constraint firstItem="PrI-tD-RQK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uM4-xJ-c3E"/>
-                            <constraint firstItem="PrI-tD-RQK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xdV-Xu-Igo"/>
+                            <constraint firstItem="PrI-tD-RQK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3LQ-IK-dLy"/>
+                            <constraint firstItem="PrI-tD-RQK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4w8-Em-x3d"/>
+                            <constraint firstAttribute="bottom" secondItem="PrI-tD-RQK" secondAttribute="bottom" id="YI5-g4-ugv"/>
+                            <constraint firstItem="XcU-w1-tWM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1.02308" id="cIH-20-Uw6"/>
+                            <constraint firstItem="PrI-tD-RQK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fbz-Iq-jaI"/>
+                            <constraint firstItem="PrI-tD-RQK" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yyB-8I-b5E"/>
                         </constraints>
+                        <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
                     </view>
                     <navigationItem key="navigationItem" id="duj-xm-v0U"/>
                     <connections>
@@ -455,7 +460,7 @@
             <objects>
                 <viewController storyboardIdentifier="SetingsViewController" id="AJG-DC-JGb" customClass="SetingsViewController" customModule="PowerPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BU7-Aw-IxA">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ks-TC-E9v">
