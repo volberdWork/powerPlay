@@ -11,6 +11,9 @@
 		BD17ED30295DC1CE004EECB9 /* LiveDataRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD17ED2F295DC1CE004EECB9 /* LiveDataRealm.swift */; };
 		BD23503129630420000C5F59 /* ModelsNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23501F29630420000C5F59 /* ModelsNetwork.swift */; };
 		BD23504329635CA8000C5F59 /* StandingBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23503829635CA7000C5F59 /* StandingBase.swift */; };
+		BD23504C296365A3000C5F59 /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23504B296365A3000C5F59 /* StandingsViewController.swift */; };
+		BD23505029636766000C5F59 /* StandingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23504E29636766000C5F59 /* StandingsTableViewCell.swift */; };
+		BD23505129636766000C5F59 /* StandingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD23504F29636766000C5F59 /* StandingsTableViewCell.xib */; };
 		BD610054295B294600A31DF4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BD610053295B294600A31DF4 /* Podfile */; };
 		BD6B2A0E2955FE750007F084 /* PreloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */; };
 		BD7336D0295DA35100369C1F /* ChangeDateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7336CF295DA35100369C1F /* ChangeDateFormat.swift */; };
@@ -37,6 +40,9 @@
 		BD17ED2F295DC1CE004EECB9 /* LiveDataRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDataRealm.swift; sourceTree = "<group>"; };
 		BD23501F29630420000C5F59 /* ModelsNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelsNetwork.swift; sourceTree = "<group>"; };
 		BD23503829635CA7000C5F59 /* StandingBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandingBase.swift; sourceTree = "<group>"; };
+		BD23504B296365A3000C5F59 /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
+		BD23504E29636766000C5F59 /* StandingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableViewCell.swift; sourceTree = "<group>"; };
+		BD23504F29636766000C5F59 /* StandingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandingsTableViewCell.xib; sourceTree = "<group>"; };
 		BD610053295B294600A31DF4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderViewController.swift; sourceTree = "<group>"; };
 		BD7336CF295DA35100369C1F /* ChangeDateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDateFormat.swift; sourceTree = "<group>"; };
@@ -86,6 +92,15 @@
 			path = RealmModels;
 			sourceTree = "<group>";
 		};
+		BD23504D29636728000C5F59 /* StandingsTVC */ = {
+			isa = PBXGroup;
+			children = (
+				BD23504E29636766000C5F59 /* StandingsTableViewCell.swift */,
+				BD23504F29636766000C5F59 /* StandingsTableViewCell.xib */,
+			);
+			path = StandingsTVC;
+			sourceTree = "<group>";
+		};
 		BD4831EC295A287C00E9C4FC /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +127,7 @@
 				BD928BF22954736600600A1C /* TermsOfServiceViewController.swift */,
 				BD928BF42954890F00600A1C /* SavedViewController.swift */,
 				BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */,
+				BD23504B296365A3000C5F59 /* StandingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -137,6 +153,7 @@
 		BD928BEC295452EF00600A1C /* xibs */ = {
 			isa = PBXGroup;
 			children = (
+				BD23504D29636728000C5F59 /* StandingsTVC */,
 				BD928BF62954899C00600A1C /* SavedTableViewCell */,
 				BD928BE62953C73600600A1C /* CollectionCell */,
 			);
@@ -270,6 +287,7 @@
 				BDA18F8429521AE000C0EAE2 /* Assets.xcassets in Resources */,
 				BDA18F8229521ADE00C0EAE2 /* Main.storyboard in Resources */,
 				BD928BFA295489D600600A1C /* SavedTableViewCell.xib in Resources */,
+				BD23505129636766000C5F59 /* StandingsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,7 +342,9 @@
 			files = (
 				BD88BDAE295E3E1300DEDB0F /* SecondCollectionViewCell.swift in Sources */,
 				BD23503129630420000C5F59 /* ModelsNetwork.swift in Sources */,
+				BD23504C296365A3000C5F59 /* StandingsViewController.swift in Sources */,
 				BD17ED30295DC1CE004EECB9 /* LiveDataRealm.swift in Sources */,
+				BD23505029636766000C5F59 /* StandingsTableViewCell.swift in Sources */,
 				BD6B2A0E2955FE750007F084 /* PreloaderViewController.swift in Sources */,
 				BDA18F7F29521ADE00C0EAE2 /* DetailCellViewController.swift in Sources */,
 				BD928BE02953A7B700600A1C /* MainViewController.swift in Sources */,
