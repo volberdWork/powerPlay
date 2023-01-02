@@ -39,7 +39,7 @@ class SavedViewController: UIViewController {
                 self.tableView.reloadData()
                 print(data)
             } catch {
-                print("Щось пішло не так")
+                print("Щось пішло не так hfp hfi")
             }
             
         }

@@ -1,23 +1,26 @@
-//
-//  StandingsTableViewCell.swift
-//  PowerPlay
-//
-//  Created by newAccount on 02.01.2023.
-//
-
 import UIKit
 
 class StandingsTableViewCell: UITableViewCell {
-
+    
+    
+    @IBOutlet var labelta: UILabel!
+    
+    static let identifier = "StandingsTableViewCell"
+    static func nib()-> UINib{
+        UINib(nibName: "StandingsTableViewCell", bundle: nil)
+        
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
+    
+
+        
     
 }

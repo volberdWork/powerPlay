@@ -38,6 +38,9 @@ class DetailCellViewController: UIViewController {
         super.viewDidLoad()
         
         configure()
+        print(awayId)
+        print(homeId)
+        print("fifa finish")
         
         
     }
@@ -68,8 +71,8 @@ class DetailCellViewController: UIViewController {
         let main = UIStoryboard(name: "Main", bundle: nil)
         if let vc = main.instantiateViewController(withIdentifier: "SavedViewController") as? SavedViewController {
             navigationController?.pushViewController(vc, animated: true)
-            vc.firstId = awayId
-            vc.secondId = homeId
+            vc.firstId = homeId
+            vc.secondId = awayId
             vc.homeLogoLink = homeLogoLink
             vc.awaylogoLink = awaylogoLink
             vc.title = "H2H"
