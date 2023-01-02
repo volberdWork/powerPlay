@@ -9,4 +9,3 @@ func changeDateFormat(dateString: String, fromFormat: String, toFormat: String) 
     outputDateFormatter.dateFormat = toFormat
     return outputDateFormatter.string(from: date!)
 }
-

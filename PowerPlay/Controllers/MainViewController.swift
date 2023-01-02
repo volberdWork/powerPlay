@@ -16,10 +16,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         fixtersBase()
         liveData()
         
-        
-        
-        
-        
     }
     
     func liveData(){
@@ -82,20 +78,24 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if (collectionView == firstCollectionView){
+        
+        switch collectionView{
+        case firstCollectionView:
             let cell = firstCollectionView.dequeueReusableCell(withReuseIdentifier: "MainFirstInfoCollectionViewCell", for: indexPath) as! MainFirstInfoCollectionViewCell
             
             cell.firstSetupView(model: liveArray[indexPath.row])
             collectionView.backgroundColor = self.view.backgroundColor
             return cell
+        case secondCollectionView:
+            let cell2 = secondCollectionView.dequeueReusableCell(withReuseIdentifier: "SecondCollectionViewCell", for: indexPath) as! SecondCollectionViewCell
+            
+            cell2.setupView(model: fixtersArray[indexPath.row])
+            collectionView.backgroundColor = self.view.backgroundColor
+            
+            return cell2
+        default:
+            return UICollectionViewCell()
         }
-        
-        let cell2 = secondCollectionView.dequeueReusableCell(withReuseIdentifier: "SecondCollectionViewCell", for: indexPath) as! SecondCollectionViewCell
-        
-        cell2.setupView(model: fixtersArray[indexPath.row])
-        collectionView.backgroundColor = self.view.backgroundColor
-        
-        return cell2
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -104,11 +104,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let liveData = liveArray[indexPath.row]
-        let fixtersData = liveArray[indexPath.row]
-        let main = UIStoryboard(name: "Main", bundle: nil)
+        let fixtersData = fixtersArray[indexPath.row]
         
-        
-        if (collectionView == firstCollectionView){
+        switch collectionView {
+        case firstCollectionView :
+            let main = UIStoryboard(name: "Main", bundle: nil)
             if let vc = main.instantiateViewController(withIdentifier: "DetailCellViewController") as? DetailCellViewController {
                 navigationController?.pushViewController(vc, animated: true)
                 vc.yearText = String(describing: liveData.league?.season ?? 0)
@@ -123,26 +123,28 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 vc.homeLogoLink = liveData.teams?.home?.logo ?? ""
                 vc.awayId = liveData.teams?.away?.id ?? 0
                 vc.homeId = liveData.teams?.home?.id ?? 0
-                
             }
+        case secondCollectionView:
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            if let vc = main.instantiateViewController(withIdentifier: "DetailCellViewController") as? DetailCellViewController {
+                navigationController?.pushViewController(vc, animated: true)
+                vc.yearText = String(describing: fixtersData.league?.season ?? 0)
+                vc.awayTeamName = fixtersData.teams?.away?.name ?? ""
+                vc.homeTeamName = fixtersData.teams?.home?.name ?? ""
+                vc.awayPoint = fixtersData.goals?.away ?? 0
+                vc.homePoint = fixtersData.goals?.home ?? 0
+                vc.seasonText = "Season \(String(describing: fixtersData.league?.season ?? 0))"
+                vc.leagueText = fixtersData.league?.name ?? ""
+                vc.dataText = changeDateFormat(dateString: (fixtersData.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd MMMM HH:mm")
+                vc.awaylogoLink = fixtersData.teams?.away?.logo ?? ""
+                vc.homeLogoLink = fixtersData.teams?.home?.logo ?? ""
+                vc.awayId = fixtersData.teams?.away?.id ?? 0
+                vc.homeId = fixtersData.teams?.home?.id ?? 0
+            }
+            
+        default:
+            return
         }
-        if let vc = main.instantiateViewController(withIdentifier: "DetailCellViewController") as? DetailCellViewController {
-            navigationController?.pushViewController(vc, animated: true)
-            vc.yearText = String(describing: fixtersData.league?.season ?? 0)
-            vc.awayTeamName = fixtersData.teams?.away?.name ?? ""
-            vc.homeTeamName = fixtersData.teams?.home?.name ?? ""
-            vc.awayPoint = fixtersData.goals?.away ?? 0
-            vc.homePoint = fixtersData.goals?.home ?? 0
-            vc.seasonText = "Season \(String(describing: fixtersData.league?.season ?? 0))"
-            vc.leagueText = fixtersData.league?.name ?? ""
-            vc.dataText = changeDateFormat(dateString: (fixtersData.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd MMMM HH:mm")
-            vc.awaylogoLink = fixtersData.teams?.away?.logo ?? ""
-            vc.homeLogoLink = fixtersData.teams?.home?.logo ?? ""
-            vc.awayId = fixtersData.teams?.away?.id ?? 0
-            vc.homeId = fixtersData.teams?.home?.id ?? 0
-        }
-        
-        
     }
 }
 
