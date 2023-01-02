@@ -14,6 +14,7 @@
 		BD23504C296365A3000C5F59 /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23504B296365A3000C5F59 /* StandingsViewController.swift */; };
 		BD23505029636766000C5F59 /* StandingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23504E29636766000C5F59 /* StandingsTableViewCell.swift */; };
 		BD23505129636766000C5F59 /* StandingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD23504F29636766000C5F59 /* StandingsTableViewCell.xib */; };
+		BD235055296381C9000C5F59 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD235054296381C8000C5F59 /* Parameters.swift */; };
 		BD610054295B294600A31DF4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BD610053295B294600A31DF4 /* Podfile */; };
 		BD6B2A0E2955FE750007F084 /* PreloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */; };
 		BD7336D0295DA35100369C1F /* ChangeDateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7336CF295DA35100369C1F /* ChangeDateFormat.swift */; };
@@ -43,6 +44,7 @@
 		BD23504B296365A3000C5F59 /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
 		BD23504E29636766000C5F59 /* StandingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableViewCell.swift; sourceTree = "<group>"; };
 		BD23504F29636766000C5F59 /* StandingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandingsTableViewCell.xib; sourceTree = "<group>"; };
+		BD235054296381C8000C5F59 /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		BD610053295B294600A31DF4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderViewController.swift; sourceTree = "<group>"; };
 		BD7336CF295DA35100369C1F /* ChangeDateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDateFormat.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				BD23501F29630420000C5F59 /* ModelsNetwork.swift */,
+				BD235054296381C8000C5F59 /* Parameters.swift */,
 				BD23503829635CA7000C5F59 /* StandingBase.swift */,
 			);
 			path = APIModels;
@@ -340,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD235055296381C9000C5F59 /* Parameters.swift in Sources */,
 				BD88BDAE295E3E1300DEDB0F /* SecondCollectionViewCell.swift in Sources */,
 				BD23503129630420000C5F59 /* ModelsNetwork.swift in Sources */,
 				BD23504C296365A3000C5F59 /* StandingsViewController.swift in Sources */,

@@ -108,6 +108,14 @@ struct FixtersResponse : Codable {
     let goals : Goals?
     let score : Score?
 }
+struct StandBase : Codable {
+    let get : String?
+    let parameters : Parameters?
+    let errors : [String]?
+    let results : Int?
+    let paging : Paging?
+    let response : [ResponseStandings]?
+}
 
 struct Response : Codable {
     let fixture : Fixture?
@@ -140,6 +148,7 @@ struct Venue : Codable {
     let name : String?
     let city : String?
 }
+
 
 
 

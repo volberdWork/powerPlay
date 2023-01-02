@@ -4,7 +4,7 @@ class StandingsViewController: UIViewController{
     
     
     @IBOutlet var tableView: UITableView!
-    var array : [ResponseStandings] = []
+    var array : [[Standings]] = [[]]
     var leagueId = 0
     var season = 0
     
@@ -31,9 +31,10 @@ class StandingsViewController: UIViewController{
             let decoder = JSONDecoder()
             guard let respponseData = responseJSON.data else {return}
             do {
-                let data = try decoder.decode(StandingBase.self, from: respponseData)
-                self.array = data.response!
+                let data = try decoder.decode(StandBase.self, from: respponseData)
+                self.array = (data.response![0].league?.standings)!
                 self.tableView.reloadData()
+                print(url)
                 print("Finish")
             } catch {
                 print("Щось пішло не так")
@@ -57,14 +58,16 @@ class StandingsViewController: UIViewController{
 
 extension StandingsViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+        print(array[0].count)
+        return array[0].count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "StandingsTableViewCell") as? StandingsTableViewCell else { return UITableViewCell() }
-        let data = array[indexPath.row].league?.standings
+        let data = array[0]
         cell.selectionStyle = .none
-        cell.labelta.text = "YTYT"
+        cell.labelta.text = data[indexPath.row].team?.name
         return cell
     }
     
