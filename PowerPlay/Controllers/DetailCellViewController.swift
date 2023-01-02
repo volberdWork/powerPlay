@@ -70,6 +70,8 @@ class DetailCellViewController: UIViewController {
             navigationController?.pushViewController(vc, animated: true)
             vc.firstId = awayId
             vc.secondId = homeId
+            vc.homeLogoLink = homeLogoLink
+            vc.awaylogoLink = awaylogoLink
         }
         
     

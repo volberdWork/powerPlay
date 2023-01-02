@@ -1,5 +1,6 @@
 import UIKit
 import Alamofire
+import Kingfisher
 class SavedViewController: UIViewController {
     
     
@@ -7,11 +8,13 @@ class SavedViewController: UIViewController {
     var array: [Response] = []
     var firstId = 0
     var secondId = 0
+    var awaylogoLink = ""
+    var homeLogoLink = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        headToHeadData()
+        headToHeadData(first: firstId, second: secondId)
         
         
     }
@@ -24,8 +27,8 @@ class SavedViewController: UIViewController {
         tableView.register(SavedTableViewCell.nib(), forCellReuseIdentifier: SavedTableViewCell.identifier )
     }
     
-    func headToHeadData(){
-        let url = "https://v3.football.api-sports.io/fixtures/headtohead?h2h=33-34"
+    func headToHeadData(first: Int, second: Int){
+        let url = "https://v3.football.api-sports.io/fixtures/headtohead?h2h=\(first)-\(second)"
                 let headers: HTTPHeaders = ["x-apisports-key":"9a49740c5034d7ee252d1e1419a10faa"]
                 AF.request(url, headers: headers).responseJSON { responseJSON in
                     let decoder = JSONDecoder()
@@ -63,6 +66,7 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
         cell.awayNameLabel.text = data.teams?.away?.name ?? ""
         cell.homeNameLabel.text = data.teams?.home?.name ?? ""
         cell.dateLabel.text = changeDateFormat(dateString: (data.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd MMMM HH:mm")
+        cell.pointsLabel.text = "\(String(describing: data.goals?.home ?? 0)):\(String(describing: data.goals?.away ?? 0))"
         return cell
     }
     
@@ -70,3 +74,4 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
         return 240
     }
 }
+
