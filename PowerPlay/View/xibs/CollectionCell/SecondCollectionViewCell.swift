@@ -26,7 +26,7 @@ class SecondCollectionViewCell: UICollectionViewCell{
     
     // MARK: - Public Methods
     
-    public func setupView(model: ResponseResult){
+    public func setupView(model: Response){
           self.dateLabel1.text = changeDateFormat(dateString: (model.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd.MM HH:mm")
         self.firstComandLabel.text = model.teams?.home?.name ?? ""
         self.srcondComandLabel.text = model.teams?.away?.name ?? ""

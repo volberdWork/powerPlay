@@ -26,7 +26,7 @@ class MainFirstInfoCollectionViewCell: UICollectionViewCell{
     
     // MARK: - Public Methods
     
-    public func firstSetupView(model: ResponseResult){
+    public func firstSetupView(model: Response){
           self.dateLabel1.text = changeDateFormat(dateString: (model.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd.MM HH:mm")
         self.firstComandLabel.text = model.teams?.home?.name ?? ""
         self.srcondComandLabel.text = model.teams?.away?.name ?? ""

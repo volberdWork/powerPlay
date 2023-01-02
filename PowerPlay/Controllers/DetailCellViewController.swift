@@ -15,6 +15,8 @@ class DetailCellViewController: UIViewController {
     @IBOutlet var awayNameLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     
+    var array: [Response] = []
+    
     var yearText = ""
     var leagueText = ""
     var seasonText = ""
@@ -27,6 +29,8 @@ class DetailCellViewController: UIViewController {
     var awayPoint = 0
     var awaylogoLink = ""
     var homeLogoLink = ""
+    var awayId = 0
+    var homeId = 0
     
     
     
@@ -34,7 +38,6 @@ class DetailCellViewController: UIViewController {
         super.viewDidLoad()
         
         configure()
-        
         
         
     }
@@ -59,6 +62,23 @@ class DetailCellViewController: UIViewController {
         awayImage.kf.setImage(with: URL(string: awaylogoLink))
         homeImage.kf.setImage(with: URL(string: homeLogoLink))
     }
+    
+    
+    @IBAction func headToheadButtonPressed(_ sender: UIButton) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = main.instantiateViewController(withIdentifier: "SavedViewController") as? SavedViewController {
+            navigationController?.pushViewController(vc, animated: true)
+            vc.firstId = awayId
+            vc.secondId = homeId
+        }
+        
+    
+      
+        
+    }
+    
+    
+    
     
 }
 

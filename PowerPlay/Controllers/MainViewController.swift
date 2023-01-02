@@ -7,35 +7,31 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet var firstCollectionView: UICollectionView!
     
     @IBOutlet var secondCollectionView: UICollectionView!
-    var array: [ResponseResult] = []
+    var array: [Response] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
+         configure()
         
-        loadDataFromAPI()
-      
-       
+        liveData()
+
+        
+        
     }
     
     
-    
-    
-    
-    func loadDataFromAPI(){
-        
+    func liveData(){
         let url = "https://v3.football.api-sports.io/fixtures?next=50"
         let headers: HTTPHeaders = ["x-apisports-key":"9a49740c5034d7ee252d1e1419a10faa"]
-        
-        AF.request(url, method: .get, headers: headers).responseJSON { responseJSON in
+        AF.request(url, headers: headers).responseJSON { responseJSON in
             let decoder = JSONDecoder()
             guard let respponseData = responseJSON.data else {return}
-            
+            print(respponseData)
             do {
-                let data = try decoder.decode(InfoTrend.self, from: respponseData)
-                self.array = data.response
+                let data = try decoder.decode(FixtersBase.self, from: respponseData)
+                self.array = data.response!
                 self.firstCollectionView.reloadData()
-                self.secondCollectionView.reloadData()
+                
             } catch {
                 print("Щось пішло не так")
             }
@@ -47,13 +43,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     
     
+    
     func configure(){
         view.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
         
     }
     
     
-
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == firstCollectionView){
@@ -67,16 +64,16 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if (collectionView == firstCollectionView){
             let cell = firstCollectionView.dequeueReusableCell(withReuseIdentifier: "MainFirstInfoCollectionViewCell", for: indexPath) as! MainFirstInfoCollectionViewCell
             
-           cell.firstSetupView(model: array[indexPath.row])
+            cell.firstSetupView(model: array[indexPath.row])
             collectionView.backgroundColor = self.view.backgroundColor
             return cell
         }
-       
+        
         let cell2 = secondCollectionView.dequeueReusableCell(withReuseIdentifier: "SecondCollectionViewCell", for: indexPath) as! SecondCollectionViewCell
         
         cell2.setupView(model: array[indexPath.row])
         collectionView.backgroundColor = self.view.backgroundColor
-       
+        
         return cell2
     }
     
@@ -99,10 +96,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             vc.dataText = changeDateFormat(dateString: (data.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd MMMM HH:mm")
             vc.awaylogoLink = data.teams?.away?.logo ?? ""
             vc.homeLogoLink = data.teams?.home?.logo ?? ""
-
+            vc.awayId = data.teams?.away?.id ?? 0
+            vc.homeId = data.teams?.home?.id ?? 0
+            
         }
-
-
+        
+        
     }
 }
 

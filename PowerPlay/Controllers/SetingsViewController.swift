@@ -6,10 +6,7 @@ class SetingsViewController: UIViewController {
         super.viewDidLoad()
         
         
-        
     }
-    
-    
     
     
     @IBAction func pressedButtonNotification(_ sender: UIButton) {

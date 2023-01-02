@@ -741,7 +741,7 @@
                                                     <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="5Ux-lM-H1d" kind="show" id="YqF-ln-cMp"/>
+                                                    <action selector="headToheadButtonPressed:" destination="dzW-Ul-aqE" eventType="touchUpInside" id="Q9J-He-P7i"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvY-76-7Jx">
@@ -869,11 +869,11 @@
             <objects>
                 <viewController storyboardIdentifier="SavedViewController" id="5Ux-lM-H1d" customClass="SavedViewController" customModule="PowerPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O2q-Aj-Vwh">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qsU-c0-dAa">
-                                <rect key="frame" x="0.0" y="83" width="390" height="704"/>
+                                <rect key="frame" x="0.0" y="127" width="390" height="683"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="5Ux-lM-H1d" id="lGK-2V-4fC"/>
@@ -900,9 +900,6 @@
             <point key="canvasLocation" x="2820" y="833"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="YqF-ln-cMp"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Image" width="123.33333587646484" height="156.66667175292969"/>
         <image name="background" width="130" height="281.33334350585938"/>
