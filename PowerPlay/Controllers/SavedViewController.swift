@@ -29,23 +29,23 @@ class SavedViewController: UIViewController {
     
     func headToHeadData(first: Int, second: Int){
         let url = "https://v3.football.api-sports.io/fixtures/headtohead?h2h=\(first)-\(second)"
-                let headers: HTTPHeaders = ["x-apisports-key":"9a49740c5034d7ee252d1e1419a10faa"]
-                AF.request(url, headers: headers).responseJSON { responseJSON in
-                    let decoder = JSONDecoder()
-                    guard let respponseData = responseJSON.data else {return}
-                    do {
-                        let data = try decoder.decode(HeadToHeadBase.self, from: respponseData)
-                        self.array = data.response!
-                        self.tableView.reloadData()
-                        print(data)
-                    } catch {
-                        print("Щось пішло не так")
-                    }
-        
-                }
+        let headers: HTTPHeaders = ["x-apisports-key":"9a49740c5034d7ee252d1e1419a10faa"]
+        AF.request(url, headers: headers).responseJSON { responseJSON in
+            let decoder = JSONDecoder()
+            guard let respponseData = responseJSON.data else {return}
+            do {
+                let data = try decoder.decode(HeadToHeadBase.self, from: respponseData)
+                self.array = data.response!
+                self.tableView.reloadData()
+                print(data)
+            } catch {
+                print("Щось пішло не так")
+            }
+            
+        }
     }
     
-  
+    
     
     
 }

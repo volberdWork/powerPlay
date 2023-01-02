@@ -7,16 +7,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet var firstCollectionView: UICollectionView!
     
     @IBOutlet var secondCollectionView: UICollectionView!
-    var array: [Response] = []
+    var fixtersArray: [Response] = []
     var liveArray: [Response] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         configure()
-        liveData()
+        configure()
         fixtersBase()
+        liveData()
         
-
+        
+        
         
         
     }
@@ -49,7 +50,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             print(respponseData)
             do {
                 let data = try decoder.decode(FixtersBase.self, from: respponseData)
-                self.array = data.response!
+                self.fixtersArray = data.response!
                 self.secondCollectionView.reloadData()
                 
             } catch {
@@ -76,7 +77,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if (collectionView == firstCollectionView){
             return liveArray.count
         }
-        return array.count
+        return fixtersArray.count
         
     }
     
@@ -91,7 +92,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let cell2 = secondCollectionView.dequeueReusableCell(withReuseIdentifier: "SecondCollectionViewCell", for: indexPath) as! SecondCollectionViewCell
         
-        cell2.setupView(model: array[indexPath.row])
+        cell2.setupView(model: fixtersArray[indexPath.row])
         collectionView.backgroundColor = self.view.backgroundColor
         
         return cell2
@@ -102,42 +103,43 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if (collectionView == secondCollectionView){
-            let data = array[indexPath.row]
-            let main = UIStoryboard(name: "Main", bundle: nil)
+        let liveData = liveArray[indexPath.row]
+        let fixtersData = liveArray[indexPath.row]
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        
+        
+        if (collectionView == firstCollectionView){
             if let vc = main.instantiateViewController(withIdentifier: "DetailCellViewController") as? DetailCellViewController {
                 navigationController?.pushViewController(vc, animated: true)
-                vc.yearText = String(describing: data.league?.season ?? 0)
-                vc.awayTeamName = data.teams?.away?.name ?? ""
-                vc.homeTeamName = data.teams?.home?.name ?? ""
-                vc.awayPoint = data.goals?.away ?? 0
-                vc.homePoint = data.goals?.home ?? 0
-                vc.seasonText = "Season \(String(describing: data.league?.season ?? 0))"
-                vc.leagueText = data.league?.name ?? ""
-                vc.dataText = changeDateFormat(dateString: (data.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd MMMM HH:mm")
-                vc.awaylogoLink = data.teams?.away?.logo ?? ""
-                vc.homeLogoLink = data.teams?.home?.logo ?? ""
-                vc.awayId = data.teams?.away?.id ?? 0
-                vc.homeId = data.teams?.home?.id ?? 0
+                vc.yearText = String(describing: liveData.league?.season ?? 0)
+                vc.awayTeamName = liveData.teams?.away?.name ?? ""
+                vc.homeTeamName = liveData.teams?.home?.name ?? ""
+                vc.awayPoint = liveData.goals?.away ?? 0
+                vc.homePoint = liveData.goals?.home ?? 0
+                vc.seasonText = "Season \(String(describing: liveData.league?.season ?? 0))"
+                vc.leagueText = liveData.league?.name ?? ""
+                vc.dataText = changeDateFormat(dateString: (liveData.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd MMMM HH:mm")
+                vc.awaylogoLink = liveData.teams?.away?.logo ?? ""
+                vc.homeLogoLink = liveData.teams?.home?.logo ?? ""
+                vc.awayId = liveData.teams?.away?.id ?? 0
+                vc.homeId = liveData.teams?.home?.id ?? 0
                 
             }
-            }
-        let data = liveArray[indexPath.row]
-        let main = UIStoryboard(name: "Main", bundle: nil)
+        }
         if let vc = main.instantiateViewController(withIdentifier: "DetailCellViewController") as? DetailCellViewController {
             navigationController?.pushViewController(vc, animated: true)
-            vc.yearText = String(describing: data.league?.season ?? 0)
-            vc.awayTeamName = data.teams?.away?.name ?? ""
-            vc.homeTeamName = data.teams?.home?.name ?? ""
-            vc.awayPoint = data.goals?.away ?? 0
-            vc.homePoint = data.goals?.home ?? 0
-            vc.seasonText = "Season \(String(describing: data.league?.season ?? 0))"
-            vc.leagueText = data.league?.name ?? ""
-            vc.dataText = changeDateFormat(dateString: (data.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd MMMM HH:mm")
-            vc.awaylogoLink = data.teams?.away?.logo ?? ""
-            vc.homeLogoLink = data.teams?.home?.logo ?? ""
-            vc.awayId = data.teams?.away?.id ?? 0
-            vc.homeId = data.teams?.home?.id ?? 0
+            vc.yearText = String(describing: fixtersData.league?.season ?? 0)
+            vc.awayTeamName = fixtersData.teams?.away?.name ?? ""
+            vc.homeTeamName = fixtersData.teams?.home?.name ?? ""
+            vc.awayPoint = fixtersData.goals?.away ?? 0
+            vc.homePoint = fixtersData.goals?.home ?? 0
+            vc.seasonText = "Season \(String(describing: fixtersData.league?.season ?? 0))"
+            vc.leagueText = fixtersData.league?.name ?? ""
+            vc.dataText = changeDateFormat(dateString: (fixtersData.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd MMMM HH:mm")
+            vc.awaylogoLink = fixtersData.teams?.away?.logo ?? ""
+            vc.homeLogoLink = fixtersData.teams?.home?.logo ?? ""
+            vc.awayId = fixtersData.teams?.away?.id ?? 0
+            vc.homeId = fixtersData.teams?.home?.id ?? 0
         }
         
         

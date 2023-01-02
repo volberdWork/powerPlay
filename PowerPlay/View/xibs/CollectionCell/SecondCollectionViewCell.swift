@@ -1,7 +1,7 @@
 import UIKit
 import Kingfisher
 class SecondCollectionViewCell: UICollectionViewCell{
-   
+    
     @IBOutlet var dateLabel1: UILabel!
     @IBOutlet var rightImage: UIImageView!
     static let identifire = "SecondCollectionViewCell"
@@ -27,7 +27,7 @@ class SecondCollectionViewCell: UICollectionViewCell{
     // MARK: - Public Methods
     
     public func setupView(model: Response){
-          self.dateLabel1.text = changeDateFormat(dateString: (model.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd.MM HH:mm")
+        self.dateLabel1.text = changeDateFormat(dateString: (model.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd.MM HH:mm")
         self.firstComandLabel.text = model.teams?.home?.name ?? ""
         self.srcondComandLabel.text = model.teams?.away?.name ?? ""
         self.leftImage.kf.setImage(with: URL(string: model.teams?.home?.logo ?? ""))

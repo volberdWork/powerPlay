@@ -27,14 +27,15 @@ class MainFirstInfoCollectionViewCell: UICollectionViewCell{
     // MARK: - Public Methods
     
     public func firstSetupView(model: Response){
-          self.dateLabel1.text = changeDateFormat(dateString: (model.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd.MM HH:mm")
+        self.dateLabel1.text = changeDateFormat(dateString: (model.fixture?.date)!, fromFormat: "yyyy-MM-dd'T'HH:mm:ssZ", toFormat: "dd.MM HH:mm")
         self.firstComandLabel.text = model.teams?.home?.name ?? ""
         self.srcondComandLabel.text = model.teams?.away?.name ?? ""
         self.leftImage.kf.setImage(with: URL(string: model.teams?.home?.logo ?? ""))
         self.rightImage.kf.setImage(with: URL(string: model.teams?.away?.logo ?? ""))
-        self.secondPointLabel.text = "0"
-        self.firstPointLabel.text = "0"
+        self.secondPointLabel.text = "\(model.goals?.away ?? 0)"
+        self.firstPointLabel.text = "\(model.goals?.home ?? 0)"
     }
+    
     
     
     

@@ -75,8 +75,8 @@ class DetailCellViewController: UIViewController {
             vc.title = "H2H"
         }
         
-    
-      
+        
+        
         
     }
     
