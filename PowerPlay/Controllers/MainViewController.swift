@@ -126,6 +126,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 vc.homeLogoLink = self.fixtersArray[indexPath.row].teams?.home?.logo ?? ""
                 vc.awayId = self.fixtersArray[indexPath.row].teams?.away?.id ?? 0
                 vc.homeId = self.fixtersArray[indexPath.row].teams?.home?.id ?? 0
+                vc.season = self.fixtersArray[indexPath.row].league?.season ?? 0
+                vc.league = self.fixtersArray[indexPath.row].league?.id ?? 0
+                
             }
         case firstCollectionView :
             let main = UIStoryboard(name: "Main", bundle: nil)
@@ -143,6 +146,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 vc.homeLogoLink = self.liveArray[indexPath.row].teams?.home?.logo ?? ""
                 vc.awayId = self.liveArray[indexPath.row].teams?.away?.id ?? 0
                 vc.homeId = self.liveArray[indexPath.row].teams?.home?.id ?? 0
+                vc.season = self.liveArray[indexPath.row].league?.season ?? 0
+                vc.league = self.liveArray[indexPath.row].league?.id ?? 0
             }
             
         default:

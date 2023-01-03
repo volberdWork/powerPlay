@@ -11,7 +11,7 @@ class StandingsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        standingsBase(league: 39, season: 2019)
+        standingsBase(league: leagueId, season: season)
     }
     
     
@@ -32,7 +32,7 @@ class StandingsViewController: UIViewController{
             guard let respponseData = responseJSON.data else {return}
             do {
                 let data = try decoder.decode(StandBase.self, from: respponseData)
-                self.array = (data.response![0].league?.standings)!
+                self.array = data.response?[0].league?.standings ?? [[]]
                 self.tableView.reloadData()
                 print(url)
                 print("Finish")
@@ -66,7 +66,7 @@ extension StandingsViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 240
+        return 155
     }
     
 }

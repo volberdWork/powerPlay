@@ -31,6 +31,8 @@ class DetailCellViewController: UIViewController {
     var homeLogoLink = ""
     var awayId = 0
     var homeId = 0
+    var season = 0
+    var league = 0
     
     
     
@@ -83,6 +85,20 @@ class DetailCellViewController: UIViewController {
         
     }
     
+    @IBAction func standingsPressed(_ sender: UIButton) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = main.instantiateViewController(withIdentifier: "StandingsViewController") as? StandingsViewController {
+            navigationController?.pushViewController(vc, animated: true)
+            vc.season = season
+            vc.leagueId = league
+            
+            
+            
+        }
+        
+        
+        
+    }
     
     
     

@@ -4,10 +4,10 @@ class StandingsTableViewCell: UITableViewCell {
     
 
     @IBOutlet var rankLabel: UILabel!
-    
+
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var logoTeam: UIImageView!
-    
+
     
     var logoLink = ""
     static let identifier = "StandingsTableViewCell"

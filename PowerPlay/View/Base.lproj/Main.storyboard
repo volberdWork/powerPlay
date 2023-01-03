@@ -786,7 +786,7 @@
                                                     <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="Ddu-qW-AIE" kind="push" id="Ggb-lJ-1cv"/>
+                                                    <action selector="standingsPressed:" destination="dzW-Ul-aqE" eventType="touchUpInside" id="vgq-N7-guz"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Up-hM-lxp">
@@ -872,13 +872,13 @@
         <!--Standings View Controller-->
         <scene sceneID="ay9-PQ-92V">
             <objects>
-                <viewController id="Ddu-qW-AIE" customClass="StandingsViewController" customModule="PowerPlay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StandingsViewController" id="Ddu-qW-AIE" customClass="StandingsViewController" customModule="PowerPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bsO-wT-8Q6">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LEW-ar-c99">
-                                <rect key="frame" x="0.0" y="47" width="390" height="740"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Ddu-qW-AIE" id="Lh1-n1-Ssd"/>
