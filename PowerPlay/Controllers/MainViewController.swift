@@ -96,6 +96,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
         default:
             return UICollectionViewCell()
+            
         }
     }
     

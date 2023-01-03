@@ -2,9 +2,11 @@ import UIKit
 
 class StandingsTableViewCell: UITableViewCell {
     
+
+    @IBOutlet var rankLabel: UILabel!
     
-    @IBOutlet var labelta: UILabel!
-    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var logoTeam: UIImageView!
     static let identifier = "StandingsTableViewCell"
     static func nib()-> UINib{
         UINib(nibName: "StandingsTableViewCell", bundle: nil)

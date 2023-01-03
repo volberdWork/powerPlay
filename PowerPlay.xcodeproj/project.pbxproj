@@ -15,6 +15,7 @@
 		BD23505029636766000C5F59 /* StandingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23504E29636766000C5F59 /* StandingsTableViewCell.swift */; };
 		BD23505129636766000C5F59 /* StandingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD23504F29636766000C5F59 /* StandingsTableViewCell.xib */; };
 		BD235055296381C9000C5F59 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD235054296381C8000C5F59 /* Parameters.swift */; };
+		BD264A7629639109008FE5B5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD264A7529639109008FE5B5 /* Network.swift */; };
 		BD610054295B294600A31DF4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BD610053295B294600A31DF4 /* Podfile */; };
 		BD6B2A0E2955FE750007F084 /* PreloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */; };
 		BD7336D0295DA35100369C1F /* ChangeDateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7336CF295DA35100369C1F /* ChangeDateFormat.swift */; };
@@ -45,6 +46,7 @@
 		BD23504E29636766000C5F59 /* StandingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableViewCell.swift; sourceTree = "<group>"; };
 		BD23504F29636766000C5F59 /* StandingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandingsTableViewCell.xib; sourceTree = "<group>"; };
 		BD235054296381C8000C5F59 /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
+		BD264A7529639109008FE5B5 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		BD610053295B294600A31DF4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderViewController.swift; sourceTree = "<group>"; };
 		BD7336CF295DA35100369C1F /* ChangeDateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDateFormat.swift; sourceTree = "<group>"; };
@@ -101,6 +103,14 @@
 				BD23504F29636766000C5F59 /* StandingsTableViewCell.xib */,
 			);
 			path = StandingsTVC;
+			sourceTree = "<group>";
+		};
+		BD264A74296390F4008FE5B5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BD264A7529639109008FE5B5 /* Network.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		BD4831EC295A287C00E9C4FC /* APIModels */ = {
@@ -202,6 +212,7 @@
 		BDA18F7929521ADE00C0EAE2 /* PowerPlay */ = {
 			isa = PBXGroup;
 			children = (
+				BD264A74296390F4008FE5B5 /* Network */,
 				BD7336CE295DA30A00369C1F /* Extensions */,
 				BD928BED2954538500600A1C /* Models */,
 				BD928BDA29526B3400600A1C /* Controllers */,
@@ -355,6 +366,7 @@
 				BDA18F7B29521ADE00C0EAE2 /* AppDelegate.swift in Sources */,
 				BDA18F7D29521ADE00C0EAE2 /* SceneDelegate.swift in Sources */,
 				BD928BF9295489D600600A1C /* SavedTableViewCell.swift in Sources */,
+				BD264A7629639109008FE5B5 /* Network.swift in Sources */,
 				BD23504329635CA8000C5F59 /* StandingBase.swift in Sources */,
 				BD928BE92953C76200600A1C /* MainInfoCollectionViewCell.swift in Sources */,
 				BD928BF52954890F00600A1C /* SavedViewController.swift in Sources */,

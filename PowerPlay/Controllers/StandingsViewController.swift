@@ -48,14 +48,6 @@ class StandingsViewController: UIViewController{
     
 }
 
-
-
-
-
-
-
-
-
 extension StandingsViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(array[0].count)
@@ -67,7 +59,7 @@ extension StandingsViewController: UITableViewDataSource, UITableViewDelegate{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "StandingsTableViewCell") as? StandingsTableViewCell else { return UITableViewCell() }
         let data = array[0]
         cell.selectionStyle = .none
-        cell.labelta.text = data[indexPath.row].team?.name
+        cell.nameLabel.text = data[indexPath.row].team?.name
         return cell
     }
     

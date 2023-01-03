@@ -40,7 +40,7 @@
                                                     <backgroundConfiguration key="background" image="setingIcon"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="AJG-DC-JGb" kind="presentation" id="jQH-jz-czc"/>
+                                                    <segue destination="AJG-DC-JGb" kind="push" id="OrY-Of-eZL"/>
                                                 </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eQF-Y3-1Z6">
@@ -460,11 +460,11 @@
             <objects>
                 <viewController storyboardIdentifier="SetingsViewController" id="AJG-DC-JGb" customClass="SetingsViewController" customModule="PowerPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BU7-Aw-IxA">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ks-TC-E9v">
-                                <rect key="frame" x="30" y="100" width="330" height="45"/>
+                                <rect key="frame" x="30" y="144" width="330" height="45"/>
                                 <color key="backgroundColor" red="0.16862745098039217" green="0.1803921568627451" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="dK2-WG-sQI"/>
@@ -477,7 +477,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBw-wr-tjl">
-                                <rect key="frame" x="30" y="165" width="330" height="45"/>
+                                <rect key="frame" x="30" y="209" width="330" height="45"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.18039215689999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="Mef-mW-OXp"/>
@@ -491,7 +491,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yU7-u5-vXm">
-                                <rect key="frame" x="30" y="230" width="330" height="45"/>
+                                <rect key="frame" x="30" y="274" width="330" height="45"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.18039215689999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="Fy4-P8-Oaa"/>
@@ -505,7 +505,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igM-dt-t8r">
-                                <rect key="frame" x="30" y="295" width="330" height="45"/>
+                                <rect key="frame" x="30" y="339" width="330" height="45"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.18039215689999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="9Jr-Xz-we3"/>
@@ -516,7 +516,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Terms Of Service"/>
                                 <connections>
-                                    <segue destination="fzP-h0-G1r" kind="show" id="Dwe-wV-YG0"/>
+                                    <segue destination="fzP-h0-G1r" kind="presentation" id="Bp0-VA-dRv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -786,7 +786,7 @@
                                                     <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="Ddu-qW-AIE" kind="show" id="1oW-Yv-iyo"/>
+                                                    <segue destination="Ddu-qW-AIE" kind="push" id="Ggb-lJ-1cv"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Up-hM-lxp">
@@ -936,11 +936,11 @@
             <objects>
                 <viewController storyboardIdentifier="SavedViewController" id="5Ux-lM-H1d" customClass="SavedViewController" customModule="PowerPlay" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O2q-Aj-Vwh">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qsU-c0-dAa">
-                                <rect key="frame" x="0.0" y="83" width="390" height="704"/>
+                                <rect key="frame" x="0.0" y="127" width="390" height="683"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="5Ux-lM-H1d" id="lGK-2V-4fC"/>

@@ -39,20 +39,14 @@ class SavedViewController: UIViewController {
                 self.tableView.reloadData()
                 print(data)
             } catch {
-                print("Щось пішло не так hfp hfi")
+                print("Щось пішло не так ")
             }
             
         }
     }
     
     
-    
-    
 }
-
-
-
-
 
 extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
