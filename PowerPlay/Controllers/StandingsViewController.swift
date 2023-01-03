@@ -59,7 +59,9 @@ extension StandingsViewController: UITableViewDataSource, UITableViewDelegate{
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "StandingsTableViewCell") as? StandingsTableViewCell else { return UITableViewCell() }
         let data = array[0]
         cell.selectionStyle = .none
-        cell.nameLabel.text = data[indexPath.row].team?.name
+        cell.nameLabel.text = data[indexPath.row].team?.name ?? ""
+        cell.logoLink = data[indexPath.row].team?.logo ?? ""
+        cell.rankLabel.text = "\(data[indexPath.row].rank ?? 0)"
         return cell
     }
     

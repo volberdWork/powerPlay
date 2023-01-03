@@ -7,6 +7,9 @@ class StandingsTableViewCell: UITableViewCell {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var logoTeam: UIImageView!
+    
+    
+    var logoLink = ""
     static let identifier = "StandingsTableViewCell"
     static func nib()-> UINib{
         UINib(nibName: "StandingsTableViewCell", bundle: nil)
@@ -19,7 +22,7 @@ class StandingsTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+        logoTeam.kf.setImage(with: URL(string: logoLink))
     }
     
 
