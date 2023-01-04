@@ -1,5 +1,10 @@
 import UIKit
 import Kingfisher
+import RealmSwift
+
+
+
+
 class DetailCellViewController: UIViewController {
     
     @IBOutlet var darkRectangle: UIView!
@@ -15,8 +20,9 @@ class DetailCellViewController: UIViewController {
     @IBOutlet var awayNameLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     
-    var array: [Response] = []
+    let realm = try? Realm()
     
+    var fixtersId = 0
     var yearText = ""
     var leagueText = ""
     var seasonText = ""
@@ -36,18 +42,17 @@ class DetailCellViewController: UIViewController {
     
     
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configure()
-        print(awayId)
-        print(homeId)
-        print("fifa finish")
         
+        print(awaylogoLink)
         
     }
-    
-    
     
     func configure(){
         darkRectangle.layer.cornerRadius = 50
@@ -69,9 +74,11 @@ class DetailCellViewController: UIViewController {
     }
     
     
+    
+    
     @IBAction func headToheadButtonPressed(_ sender: UIButton) {
         let main = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = main.instantiateViewController(withIdentifier: "SavedViewController") as? SavedViewController {
+        if let vc = main.instantiateViewController(withIdentifier: "HeadToHeadViewController") as? HeadToHeadViewController {
             navigationController?.pushViewController(vc, animated: true)
             vc.firstId = homeId
             vc.secondId = awayId
@@ -92,15 +99,36 @@ class DetailCellViewController: UIViewController {
             vc.season = season
             vc.leagueId = league
             
-            
-            
         }
+    }
+    
+    @IBAction func savePressed(_ sender: UIButton) {
+        let infoBaseRealm = InfoBaseRealm()
+        infoBaseRealm.fixtersId = self.fixtersId
+        infoBaseRealm.homeLogoLink = self.homeLogoLink
+        infoBaseRealm.awayLogoLink = self.awaylogoLink
+        infoBaseRealm.homaName = self.homeTeamName
+        infoBaseRealm.awayName = self.awayTeamName
+        infoBaseRealm.homePoint = self.homePoint
+        infoBaseRealm.awayPoint = self.awayPoint
+        infoBaseRealm.date = self.dataText
         
+        
+        try? self.realm?.write{
+            self.realm?.add(infoBaseRealm, update: .all)
+        }
         
         
     }
     
     
-    
 }
+
+
+
+
+
+
+
+
 

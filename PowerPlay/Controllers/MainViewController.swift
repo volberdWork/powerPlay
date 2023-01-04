@@ -128,6 +128,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 vc.homeId = self.fixtersArray[indexPath.row].teams?.home?.id ?? 0
                 vc.season = self.fixtersArray[indexPath.row].league?.season ?? 0
                 vc.league = self.fixtersArray[indexPath.row].league?.id ?? 0
+                vc.fixtersId = self.fixtersArray[indexPath.row].fixture?.id ?? 0
                 
             }
         case firstCollectionView :
@@ -148,6 +149,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 vc.homeId = self.liveArray[indexPath.row].teams?.home?.id ?? 0
                 vc.season = self.liveArray[indexPath.row].league?.season ?? 0
                 vc.league = self.liveArray[indexPath.row].league?.id ?? 0
+//                vc.fixtersId = self.liveArray[indexPath.row].fixture?.id ?? 0
             }
             
         default:

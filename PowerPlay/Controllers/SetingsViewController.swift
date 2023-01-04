@@ -9,6 +9,13 @@ class SetingsViewController: UIViewController {
     }
     
     
+    @IBAction func savedPressed(_ sender: UIButton) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = main.instantiateViewController(withIdentifier: "SavedViewController") as? SavedViewController {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        print("WORKS")
+    }
     @IBAction func pressedButtonNotification(_ sender: UIButton) {
         performNotificationSettings()
     }
