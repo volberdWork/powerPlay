@@ -32,7 +32,13 @@ class StandingsViewController: UIViewController{
             guard let respponseData = responseJSON.data else {return}
             do {
                 let data = try decoder.decode(StandBase.self, from: respponseData)
-                self.array = data.response?[0].league?.standings ?? [[]]
+                if let unwrapped = data.response{
+                    if unwrapped.count > 0{
+                        self.array = unwrapped[0].league?.standings ?? [[]]
+                    }else{
+                        return
+                    }
+                }
                 self.tableView.reloadData()
                 print(url)
                 print("Finish")
