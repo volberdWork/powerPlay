@@ -9,6 +9,15 @@ class StandingsTableViewCell: UITableViewCell {
     @IBOutlet var logoTeam: UIImageView!
 
     
+    @IBOutlet var playersLabel: UILabel!
+    
+    @IBOutlet var winLabel: UILabel!
+    @IBOutlet var drawLabel: UILabel!
+    
+    @IBOutlet var goalsDiffLAbel: UILabel!
+    @IBOutlet var ageinstLAbel: UILabel!
+    @IBOutlet var forLabel: UILabel!
+    @IBOutlet var loseLabel: UILabel!
     var logoLink = ""
     static let identifier = "StandingsTableViewCell"
     static func nib()-> UINib{
