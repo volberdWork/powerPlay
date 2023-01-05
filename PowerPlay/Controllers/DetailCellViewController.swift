@@ -2,9 +2,6 @@ import UIKit
 import Kingfisher
 import RealmSwift
 
-
-
-
 class DetailCellViewController: UIViewController {
     
     @IBOutlet var darkRectangle: UIView!
@@ -20,6 +17,7 @@ class DetailCellViewController: UIViewController {
     @IBOutlet var awayNameLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     
+    @IBOutlet var saveButton: UIButton!
     let realm = try? Realm()
     
     var fixtersId = 0
@@ -41,17 +39,10 @@ class DetailCellViewController: UIViewController {
     var league = 0
     
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configure()
-        
         print(awaylogoLink)
-        
     }
     
     func configure(){
@@ -71,9 +62,8 @@ class DetailCellViewController: UIViewController {
         pointLabel.text = "\(homePoint):\(awayPoint)"
         awayImage.kf.setImage(with: URL(string: awaylogoLink))
         homeImage.kf.setImage(with: URL(string: homeLogoLink))
+        saveButton.backgroundColor = .red
     }
-    
-    
     
     
     @IBAction func headToheadButtonPressed(_ sender: UIButton) {
@@ -86,10 +76,6 @@ class DetailCellViewController: UIViewController {
             vc.awaylogoLink = awaylogoLink
             vc.title = "H2H"
         }
-        
-        
-        
-        
     }
     
     @IBAction func standingsPressed(_ sender: UIButton) {
@@ -113,22 +99,11 @@ class DetailCellViewController: UIViewController {
         infoBaseRealm.awayPoint = self.awayPoint
         infoBaseRealm.date = self.dataText
         
-        
         try? self.realm?.write{
             self.realm?.add(infoBaseRealm, update: .all)
         }
-        
-        
+        if saveButton.backgroundColor != .green{
+            saveButton.backgroundColor = .green
+        }
     }
-    
-    
 }
-
-
-
-
-
-
-
-
-

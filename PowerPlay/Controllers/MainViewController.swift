@@ -29,8 +29,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 let data = try decoder.decode(LiveBase.self, from: respponseData)
                 self.liveArray = data.response!
                 self.firstCollectionView.reloadData()
+                print(data.response!)
                 
             } catch {
+                print("OOOPPSS'")
                 print("Щось пішло не так")
             }
             
@@ -57,17 +59,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     
-    
-    
-    
-    
     func configure(){
         view.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
         
     }
-    
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == firstCollectionView){
@@ -149,7 +144,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 vc.homeId = self.liveArray[indexPath.row].teams?.home?.id ?? 0
                 vc.season = self.liveArray[indexPath.row].league?.season ?? 0
                 vc.league = self.liveArray[indexPath.row].league?.id ?? 0
-//                vc.fixtersId = self.liveArray[indexPath.row].fixture?.id ?? 0
+                //                vc.fixtersId = self.liveArray[indexPath.row].fixture?.id ?? 0
             }
             
         default:
@@ -157,9 +152,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
 }
-
-
-
 
 extension MainViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

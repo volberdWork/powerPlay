@@ -860,6 +860,7 @@
                         <outlet property="homeNameLabel" destination="gqB-GZ-IUS" id="yhS-zd-oWE"/>
                         <outlet property="leagueLabel" destination="3Pl-jC-qOA" id="xZU-wm-rRY"/>
                         <outlet property="pointLabel" destination="z9F-Ps-JXJ" id="2rc-8u-5eL"/>
+                        <outlet property="saveButton" destination="3Up-hM-lxp" id="2LR-x2-7hN"/>
                         <outlet property="seasonLabel" destination="fel-mV-AlN" id="HjO-n7-OvH"/>
                         <outlet property="yearLabel" destination="gFS-qX-GK5" id="bch-S5-vEv"/>
                         <outlet property="yearView" destination="bnb-Dx-lnh" id="4OV-Uo-fjZ"/>
