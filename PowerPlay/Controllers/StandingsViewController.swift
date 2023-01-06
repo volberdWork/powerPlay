@@ -40,7 +40,6 @@ class StandingsViewController: UIViewController{
                     }
                 }
                 self.tableView.reloadData()
-                print(url)
                 print("Finish")
             } catch {
                 print("Щось пішло не так")
@@ -56,7 +55,6 @@ class StandingsViewController: UIViewController{
 
 extension StandingsViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(array[0].count)
         return array[0].count
         
     }
@@ -75,6 +73,7 @@ extension StandingsViewController: UITableViewDataSource, UITableViewDelegate{
         cell.goalsDiffLAbel.text = "GD \(data[indexPath.row].goalsDiff ?? 0)"
         cell.playersLabel.text = "PL \(data[indexPath.row].all?.played ?? 0)"
         cell.winLabel.text = "W \(data[indexPath.row].all?.win ?? 0)"
+       
         return cell
     }
     

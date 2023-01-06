@@ -2,6 +2,7 @@ import UIKit
 import Kingfisher
 import RealmSwift
 
+
 class DetailCellViewController: UIViewController {
     
     @IBOutlet var darkRectangle: UIView!
@@ -37,13 +38,19 @@ class DetailCellViewController: UIViewController {
     var homeId = 0
     var season = 0
     var league = 0
+  
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        print(awaylogoLink)
+        
+       
+        
+        
     }
+    
+    
     
     func configure(){
         darkRectangle.layer.cornerRadius = 50
@@ -76,6 +83,13 @@ class DetailCellViewController: UIViewController {
             vc.awaylogoLink = awaylogoLink
             vc.title = "H2H"
         }
+        if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
+            UIDevice.vibrate()
+            print("vibrate on")
+        } else{
+            return
+        }
+        
     }
     
     @IBAction func standingsPressed(_ sender: UIButton) {
@@ -85,6 +99,12 @@ class DetailCellViewController: UIViewController {
             vc.season = season
             vc.leagueId = league
             
+        }
+        if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
+            UIDevice.vibrate()
+            print("vibrate on")
+        } else{
+            return
         }
     }
     
@@ -105,5 +125,12 @@ class DetailCellViewController: UIViewController {
         if saveButton.backgroundColor != .green{
             saveButton.backgroundColor = .green
         }
+        if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
+            UIDevice.vibrate()
+            print("vibrate on")
+        } else{
+            return
+        }
     }
 }
+

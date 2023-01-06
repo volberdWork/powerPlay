@@ -1,7 +1,7 @@
 import UIKit
 import Alamofire
 import Kingfisher
-
+import AudioToolbox
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     @IBOutlet var firstCollectionView: UICollectionView!
@@ -13,51 +13,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        fixtersBase()
-        liveData()
+      loadDataMain()
         
     }
     
-    func liveData(){
-        let url = "https://v3.football.api-sports.io/fixtures?live=all"
-        let headers: HTTPHeaders = ["x-apisports-key":"9a49740c5034d7ee252d1e1419a10faa"]
-        AF.request(url, headers: headers).responseJSON { responseJSON in
-            let decoder = JSONDecoder()
-            guard let respponseData = responseJSON.data else {return}
-            print(respponseData)
-            do {
-                let data = try decoder.decode(LiveBase.self, from: respponseData)
-                self.liveArray = data.response!
-                self.firstCollectionView.reloadData()
-                print(data.response!)
-                
-            } catch {
-                print("OOOPPSS'")
-                print("Щось пішло не так")
-            }
-            
-        }
-    }
-    
-    func fixtersBase(){
-        let url = "https://v3.football.api-sports.io/fixtures?next=50"
-        let headers: HTTPHeaders = ["x-apisports-key":"9a49740c5034d7ee252d1e1419a10faa"]
-        AF.request(url, headers: headers).responseJSON { responseJSON in
-            let decoder = JSONDecoder()
-            guard let respponseData = responseJSON.data else {return}
-            print(respponseData)
-            do {
-                let data = try decoder.decode(FixtersBase.self, from: respponseData)
-                self.fixtersArray = data.response!
-                self.secondCollectionView.reloadData()
-                
-            } catch {
-                print("Щось пішло не так")
-            }
-            
-        }
-    }
-    
+
     
     func configure(){
         view.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
@@ -69,6 +29,47 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return liveArray.count
         }
         return fixtersArray.count
+        
+    }
+    
+    func loadDataMain(){
+        let headers: HTTPHeaders = ["x-apisports-key":"9a49740c5034d7ee252d1e1419a10faa"]
+        let urlLive = "https://v3.football.api-sports.io/fixtures?live=all"
+        AF.request(urlLive, headers: headers).responseJSON { responseJSON in
+            let decoder = JSONDecoder()
+            guard let respponseData = responseJSON.data else {return}
+           
+            do {
+                let data = try decoder.decode(LiveBase.self, from: respponseData)
+                self.liveArray = data.response!
+                self.firstCollectionView.reloadData()
+                print(data.response!)
+               
+            
+               
+            } catch {
+                print("Щось пішло не так")
+            }
+       
+    }
+        
+            let urlFixtures = "https://v3.football.api-sports.io/fixtures?next=50"
+            
+            AF.request(urlFixtures, headers: headers).responseJSON { responseJSON in
+                let decoder = JSONDecoder()
+                guard let respponseData = responseJSON.data else {return}
+              
+                do {
+                    let data = try decoder.decode(FixtersBase.self, from: respponseData)
+                    self.fixtersArray = data.response!
+                    self.secondCollectionView.reloadData()
+                 
+                } catch {
+                    print("Щось пішло не так")
+                }
+            }
+            
+      
         
     }
     
@@ -124,8 +125,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 vc.season = self.fixtersArray[indexPath.row].league?.season ?? 0
                 vc.league = self.fixtersArray[indexPath.row].league?.id ?? 0
                 vc.fixtersId = self.fixtersArray[indexPath.row].fixture?.id ?? 0
-                
             }
+            if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
+                UIDevice.vibrate()
+                print("vibrate on")
+            } else{
+                return
+            }
+           
         case firstCollectionView :
             let main = UIStoryboard(name: "Main", bundle: nil)
             if let vc = main.instantiateViewController(withIdentifier: "DetailCellViewController") as? DetailCellViewController {
@@ -144,8 +151,18 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 vc.homeId = self.liveArray[indexPath.row].teams?.home?.id ?? 0
                 vc.season = self.liveArray[indexPath.row].league?.season ?? 0
                 vc.league = self.liveArray[indexPath.row].league?.id ?? 0
-                //                vc.fixtersId = self.liveArray[indexPath.row].fixture?.id ?? 0
+                vc.fixtersId = self.liveArray[indexPath.row].fixture?.id ?? 0
+              
+                
             }
+            
+            if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
+                UIDevice.vibrate()
+                print("vibrate on")
+            } else{
+                return
+            }
+            
             
         default:
             return

@@ -34,7 +34,6 @@ class HeadToHeadViewController: UIViewController {
                 let data = try decoder.decode(HeadToHeadBase.self, from: respponseData)
                 self.array = data.response!
                 self.tableView.reloadData()
-                print(data)
             } catch {
                 print("Щось пішло не так ")
             }
@@ -54,6 +53,7 @@ extension HeadToHeadViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SavedTableViewCell") as? SavedTableViewCell else { return UITableViewCell() }
         let data = array[indexPath.row]
         cell.selectionStyle = .none
