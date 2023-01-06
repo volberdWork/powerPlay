@@ -3,16 +3,20 @@ import AudioToolbox
 class SetingsViewController: UIViewController {
     
     @IBOutlet var vibrationLabel: UILabel!
-    
+    @IBOutlet var vibrationsView: UIView!
     @IBOutlet var onOffSwitch: UISwitch!
+    
+
+    
     var userSettingsVibration = UserDefaults.standard
     let onOffKey = "onOffKey"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
         checkVibrationState()
         
+           
     }
     
     func checkVibrationState(){
@@ -25,6 +29,8 @@ class SetingsViewController: UIViewController {
         }
     }
     
+  
+    
     @IBAction func switchChanged(_ sender: UISwitch) {
         if (onOffSwitch.isOn){
             userSettingsVibration.set(true, forKey: onOffKey)
@@ -33,7 +39,7 @@ class SetingsViewController: UIViewController {
             userSettingsVibration.set(false , forKey: onOffKey)
             vibrationLabel.text = "Vibration OFF"
         }
-       
+        
     }
     
     

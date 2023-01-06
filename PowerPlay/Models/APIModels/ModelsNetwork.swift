@@ -148,6 +148,12 @@ struct Venue : Codable {
     let name : String?
     let city : String?
 }
+struct Parameters : Codable {
+    let league : String?
+    let season : String?
+
+
+}
 
 
 

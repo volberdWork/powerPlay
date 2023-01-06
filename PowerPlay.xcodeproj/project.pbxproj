@@ -8,19 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		5EB32E36344FE69E6CC8C24D /* Pods_PowerPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BF26598E7543E98434050F /* Pods_PowerPlay.framework */; };
-		BD17ED30295DC1CE004EECB9 /* LiveDataRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD17ED2F295DC1CE004EECB9 /* LiveDataRealm.swift */; };
 		BD23503129630420000C5F59 /* ModelsNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23501F29630420000C5F59 /* ModelsNetwork.swift */; };
 		BD23504329635CA8000C5F59 /* StandingBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23503829635CA7000C5F59 /* StandingBase.swift */; };
 		BD23504C296365A3000C5F59 /* StandingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23504B296365A3000C5F59 /* StandingsViewController.swift */; };
 		BD23505029636766000C5F59 /* StandingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD23504E29636766000C5F59 /* StandingsTableViewCell.swift */; };
 		BD23505129636766000C5F59 /* StandingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD23504F29636766000C5F59 /* StandingsTableViewCell.xib */; };
-		BD235055296381C9000C5F59 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD235054296381C8000C5F59 /* Parameters.swift */; };
 		BD264A7629639109008FE5B5 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD264A7529639109008FE5B5 /* Network.swift */; };
 		BD264A782965E34F008FE5B5 /* InfoBaseRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD264A772965E34F008FE5B5 /* InfoBaseRealm.swift */; };
 		BD264A7A29662D24008FE5B5 /* HeadToHeadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD264A7929662D24008FE5B5 /* HeadToHeadViewController.swift */; };
 		BD2C415E29675A4D00CCDC6D /* DeviceExtansionVibrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C415D29675A4D00CCDC6D /* DeviceExtansionVibrate.swift */; };
 		BD610054295B294600A31DF4 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BD610053295B294600A31DF4 /* Podfile */; };
-		BD6B2A0E2955FE750007F084 /* PreloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */; };
 		BD7336D0295DA35100369C1F /* ChangeDateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7336CF295DA35100369C1F /* ChangeDateFormat.swift */; };
 		BD88BDAE295E3E1300DEDB0F /* SecondCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88BDAD295E3E1300DEDB0F /* SecondCollectionViewCell.swift */; };
 		BD928BE02953A7B700600A1C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD928BDF2953A7B700600A1C /* MainViewController.swift */; };
@@ -36,25 +33,24 @@
 		BDA18F8229521ADE00C0EAE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA18F8029521ADE00C0EAE2 /* Main.storyboard */; };
 		BDA18F8429521AE000C0EAE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDA18F8329521AE000C0EAE2 /* Assets.xcassets */; };
 		BDA18F8729521AE000C0EAE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDA18F8529521AE000C0EAE2 /* LaunchScreen.storyboard */; };
+		BDA7D86F296835BB00C0E331 /* FontExtansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7D86E296835BB00C0E331 /* FontExtansion.swift */; };
+		BDA7D8712968386C00C0E331 /* PreloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA7D8702968386C00C0E331 /* PreloaderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1788483258E7CF55F70A8F7A /* Pods-PowerPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerPlay.debug.xcconfig"; path = "Target Support Files/Pods-PowerPlay/Pods-PowerPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		47BF26598E7543E98434050F /* Pods_PowerPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PowerPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		553F77F374DACB67F5F87949 /* Pods-PowerPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PowerPlay.release.xcconfig"; path = "Target Support Files/Pods-PowerPlay/Pods-PowerPlay.release.xcconfig"; sourceTree = "<group>"; };
-		BD17ED2F295DC1CE004EECB9 /* LiveDataRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDataRealm.swift; sourceTree = "<group>"; };
 		BD23501F29630420000C5F59 /* ModelsNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelsNetwork.swift; sourceTree = "<group>"; };
 		BD23503829635CA7000C5F59 /* StandingBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandingBase.swift; sourceTree = "<group>"; };
 		BD23504B296365A3000C5F59 /* StandingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsViewController.swift; sourceTree = "<group>"; };
 		BD23504E29636766000C5F59 /* StandingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsTableViewCell.swift; sourceTree = "<group>"; };
 		BD23504F29636766000C5F59 /* StandingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandingsTableViewCell.xib; sourceTree = "<group>"; };
-		BD235054296381C8000C5F59 /* Parameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		BD264A7529639109008FE5B5 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		BD264A772965E34F008FE5B5 /* InfoBaseRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBaseRealm.swift; sourceTree = "<group>"; };
 		BD264A7929662D24008FE5B5 /* HeadToHeadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadToHeadViewController.swift; sourceTree = "<group>"; };
 		BD2C415D29675A4D00CCDC6D /* DeviceExtansionVibrate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceExtansionVibrate.swift; sourceTree = "<group>"; };
 		BD610053295B294600A31DF4 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderViewController.swift; sourceTree = "<group>"; };
 		BD7336CF295DA35100369C1F /* ChangeDateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeDateFormat.swift; sourceTree = "<group>"; };
 		BD88BDAD295E3E1300DEDB0F /* SecondCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewCell.swift; sourceTree = "<group>"; };
 		BD928BDF2953A7B700600A1C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +68,8 @@
 		BDA18F8329521AE000C0EAE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDA18F8629521AE000C0EAE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDA18F8829521AE000C0EAE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDA7D86E296835BB00C0E331 /* FontExtansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtansion.swift; sourceTree = "<group>"; };
+		BDA7D8702968386C00C0E331 /* PreloaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +95,7 @@
 		BD17ED2E295DC19D004EECB9 /* RealmModels */ = {
 			isa = PBXGroup;
 			children = (
-				BD17ED2F295DC1CE004EECB9 /* LiveDataRealm.swift */,
+				BD264A772965E34F008FE5B5 /* InfoBaseRealm.swift */,
 			);
 			path = RealmModels;
 			sourceTree = "<group>";
@@ -123,8 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				BD23501F29630420000C5F59 /* ModelsNetwork.swift */,
-				BD264A772965E34F008FE5B5 /* InfoBaseRealm.swift */,
-				BD235054296381C8000C5F59 /* Parameters.swift */,
 				BD23503829635CA7000C5F59 /* StandingBase.swift */,
 			);
 			path = APIModels;
@@ -134,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				BD7336CF295DA35100369C1F /* ChangeDateFormat.swift */,
+				BDA7D86E296835BB00C0E331 /* FontExtansion.swift */,
 				BD2C415D29675A4D00CCDC6D /* DeviceExtansionVibrate.swift */,
 			);
 			path = Extensions;
@@ -148,8 +145,8 @@
 				BD928BF029546E4600600A1C /* SetingsViewController.swift */,
 				BD928BF22954736600600A1C /* TermsOfServiceViewController.swift */,
 				BD928BF42954890F00600A1C /* SavedViewController.swift */,
-				BD6B2A0D2955FE750007F084 /* PreloaderViewController.swift */,
 				BD23504B296365A3000C5F59 /* StandingsViewController.swift */,
+				BDA7D8702968386C00C0E331 /* PreloaderViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -363,20 +360,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD235055296381C9000C5F59 /* Parameters.swift in Sources */,
 				BD88BDAE295E3E1300DEDB0F /* SecondCollectionViewCell.swift in Sources */,
 				BD264A782965E34F008FE5B5 /* InfoBaseRealm.swift in Sources */,
 				BD23503129630420000C5F59 /* ModelsNetwork.swift in Sources */,
 				BD23504C296365A3000C5F59 /* StandingsViewController.swift in Sources */,
-				BD17ED30295DC1CE004EECB9 /* LiveDataRealm.swift in Sources */,
 				BD23505029636766000C5F59 /* StandingsTableViewCell.swift in Sources */,
-				BD6B2A0E2955FE750007F084 /* PreloaderViewController.swift in Sources */,
 				BDA18F7F29521ADE00C0EAE2 /* DetailCellViewController.swift in Sources */,
 				BD928BE02953A7B700600A1C /* MainViewController.swift in Sources */,
 				BDA18F7B29521ADE00C0EAE2 /* AppDelegate.swift in Sources */,
 				BDA18F7D29521ADE00C0EAE2 /* SceneDelegate.swift in Sources */,
+				BDA7D86F296835BB00C0E331 /* FontExtansion.swift in Sources */,
 				BD928BF9295489D600600A1C /* SavedTableViewCell.swift in Sources */,
 				BD264A7629639109008FE5B5 /* Network.swift in Sources */,
+				BDA7D8712968386C00C0E331 /* PreloaderViewController.swift in Sources */,
 				BD23504329635CA8000C5F59 /* StandingBase.swift in Sources */,
 				BD264A7A29662D24008FE5B5 /* HeadToHeadViewController.swift in Sources */,
 				BD928BE92953C76200600A1C /* MainInfoCollectionViewCell.swift in Sources */,
