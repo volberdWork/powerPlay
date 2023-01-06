@@ -40,7 +40,7 @@
                                                     <backgroundConfiguration key="background" image="setingIcon"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="AJG-DC-JGb" kind="push" id="OrY-Of-eZL"/>
+                                                    <action selector="setingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cI4-3i-Lox"/>
                                                 </connections>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eQF-Y3-1Z6">
@@ -464,7 +464,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ks-TC-E9v">
-                                <rect key="frame" x="30" y="144" width="330" height="45"/>
+                                <rect key="frame" x="30" y="100" width="330" height="45"/>
                                 <color key="backgroundColor" red="0.16862745098039217" green="0.1803921568627451" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="dK2-WG-sQI"/>
@@ -479,7 +479,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yU7-u5-vXm">
-                                <rect key="frame" x="30" y="274" width="330" height="45"/>
+                                <rect key="frame" x="30" y="230" width="330" height="45"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.18039215689999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="Fy4-P8-Oaa"/>
@@ -493,7 +493,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igM-dt-t8r">
-                                <rect key="frame" x="30" y="339" width="330" height="45"/>
+                                <rect key="frame" x="30" y="295" width="330" height="45"/>
                                 <color key="backgroundColor" red="0.16862745100000001" green="0.18039215689999999" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="9Jr-Xz-we3"/>
@@ -503,9 +503,12 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Terms Of Service"/>
+                                <connections>
+                                    <action selector="termOfServiceButtonPressed:" destination="AJG-DC-JGb" eventType="touchUpInside" id="Jn2-Xm-l0D"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Cd-QG-o86">
-                                <rect key="frame" x="30" y="209" width="330" height="45"/>
+                                <rect key="frame" x="30" y="165" width="330" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vibration OFF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhJ-Ej-GMj">
                                         <rect key="frame" x="8" y="12" width="163" height="21"/>

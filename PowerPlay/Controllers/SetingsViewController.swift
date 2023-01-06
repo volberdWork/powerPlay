@@ -62,7 +62,19 @@ class SetingsViewController: UIViewController {
         }
     }
     
-
+    @IBAction func termOfServiceButtonPressed(_ sender: UIButton) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = main.instantiateViewController(withIdentifier: "TermsOfServiceViewController") as? TermsOfServiceViewController {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
+            UIDevice.vibrate()
+            print("vibrate on")
+        } else{
+            return
+        }
+    }
+    
     
     
     func performNotificationSettings() {

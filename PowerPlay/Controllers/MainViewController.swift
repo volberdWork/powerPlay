@@ -168,6 +168,23 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return
         }
     }
+    
+    
+    @IBAction func setingButtonPressed(_ sender: UIButton) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = main.instantiateViewController(withIdentifier: "SetingsViewController") as? SetingsViewController {
+            
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
+            UIDevice.vibrate()
+            print("vibrate on")
+        } else{
+            return
+        }
+        
+    }
+    
 }
 
 extension MainViewController: UICollectionViewDelegateFlowLayout{
