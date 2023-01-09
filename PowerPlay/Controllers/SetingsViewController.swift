@@ -17,7 +17,7 @@ class SetingsViewController: UIViewController {
         super.viewDidLoad()
         
         checkVibrationState()
-        setupNavigationBarItems()
+//        setupNavigationBarItems()
         
     }
     
@@ -27,13 +27,11 @@ class SetingsViewController: UIViewController {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "backButton"), for: .normal)
         button.addTarget(self, action: #selector(popnav), for: .touchUpInside)
-        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: -10)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         button.sizeToFit()
         view.addSubview(button)
         view.frame = button.bounds
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: view)
-        
-        
     }
     
     @objc func popnav() {
@@ -113,5 +111,4 @@ class SetingsViewController: UIViewController {
     }
     
 }
-
 

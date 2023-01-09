@@ -16,10 +16,16 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         configure()
         loadLiveBase()
         loadFixtersBase()
-        let yourBackImage = UIImage(named: "psg")
-        self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = yourBackImage
-        self.navigationController?.navigationBar.backItem?.title = "Custom"
+       
+    }
+    
+    
+    
+    func setupNavigationBar(){
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+         
+        
     }
     
     

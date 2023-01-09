@@ -42,7 +42,24 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
         return realmArray.count
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        if let vc = main.instantiateViewController(withIdentifier: "DetailCellViewController") as? DetailCellViewController {
+            navigationController?.pushViewController(vc, animated: true)
+            let data = realmArray[indexPath.row]
+            
+            vc.awaylogoLink = data.awayLogoLink
+            vc.homeLogoLink = data.homeLogoLink
+            vc.awayPoint = data.awayPoint
+            vc.homePoint = data.homePoint
+            vc.dataText = data.date
+            vc.homeTeamName = data.homaName
+            vc.awayTeamName = data.awayName
+//            vc.yearText = data.yearText
+            
+        }
+        print("Select \(indexPath.row)")
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SavedTableViewCell") as? SavedTableViewCell else { return UITableViewCell() }
@@ -52,7 +69,7 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
         cell.homelogoLink = data.homeLogoLink
         cell.homeNameLabel.text = data.homaName
         cell.dateLabel.text = data.date
-        cell.pointsLabel.text = ""
+        cell.pointsLabel.text = "\(data.homePoint):\(data.awayPoint)"
         cell.awayNameLabel.text = data.awayName
         
         return cell

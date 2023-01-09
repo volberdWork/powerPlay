@@ -7,20 +7,24 @@ class StandingsViewController: UIViewController{
     var array : [[Standings]] = [[]]
     var leagueId = 0
     var season = 0
+    var dataStatus = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         standingsBase(league: leagueId, season: season)
-        if array[0].count == 0{
+        if tableView.numberOfSections > 0 {
+
+        } else{
+            
             let alertMessage = UIAlertController(title: "Sorry", message: "No data", preferredStyle: .alert)
             alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alertMessage, animated: true, completion: nil)
+
         }
       
     }
-    
-    
+
     
     func configure(){
         view.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
@@ -49,7 +53,10 @@ class StandingsViewController: UIViewController{
                 self.tableView.reloadData()
                 print("Finish")
             } catch {
-            }
+                print("no data")
+
+//                self.dataStatus = false
+                            }
             
         }
     }

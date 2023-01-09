@@ -115,7 +115,7 @@ class DetailCellViewController: UIViewController {
         infoBaseRealm.homePoint = self.homePoint
         infoBaseRealm.awayPoint = self.awayPoint
         infoBaseRealm.date = self.dataText
-        
+//        infoBaseRealm.yearText = self.yearText
         try? self.realm?.write{
             self.realm?.add(infoBaseRealm, update: .all)
         }
