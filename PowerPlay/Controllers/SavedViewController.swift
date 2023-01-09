@@ -58,7 +58,7 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
             vc.homeId = data.homeId
             vc.season = data.season
             vc.league = data.league
-            
+            vc.textButtonSaveOrDelete = "Delete"
         }
         print("Select \(indexPath.row)")
     }

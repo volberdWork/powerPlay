@@ -16,7 +16,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         configure()
         loadLiveBase()
         loadFixtersBase()
-       
+        
     }
     
     
@@ -24,7 +24,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func setupNavigationBar(){
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
-         
+        
         
     }
     
@@ -135,6 +135,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 vc.season = self.fixtersArray[indexPath.row].league?.season ?? 0
                 vc.league = self.fixtersArray[indexPath.row].league?.id ?? 0
                 vc.fixtersId = self.fixtersArray[indexPath.row].fixture?.id ?? 0
+                vc.textButtonSaveOrDelete = "Save"
             }
             if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
                 UIDevice.vibrate()
@@ -162,6 +163,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 vc.season = self.liveArray[indexPath.row].league?.season ?? 0
                 vc.league = self.liveArray[indexPath.row].league?.id ?? 0
                 vc.fixtersId = self.liveArray[indexPath.row].fixture?.id ?? 0
+                vc.textButtonSaveOrDelete = "Save"
             }
             
             if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){

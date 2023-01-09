@@ -39,6 +39,9 @@ class DetailCellViewController: UIViewController {
     var season = 0
     var league = 0
     
+    @IBOutlet var deleteButton: UIButton!
+    var textButtonSaveOrDelete = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +70,11 @@ class DetailCellViewController: UIViewController {
         awayImage.kf.setImage(with: URL(string: awaylogoLink))
         homeImage.kf.setImage(with: URL(string: homeLogoLink))
         saveButton.backgroundColor = .red
+        if textButtonSaveOrDelete == "Save"{
+            deleteButton.isHidden = true
+        } else{
+            buttons[2].isHidden = true
+        }
     }
     
     
@@ -105,45 +113,50 @@ class DetailCellViewController: UIViewController {
         }
     }
     
-    @IBAction func savePressed(_ sender: UIButton) {
-        let infoBaseRealm = InfoBaseRealm()
-        infoBaseRealm.fixtersId = self.fixtersId
-        infoBaseRealm.homeLogoLink = self.homeLogoLink
-        infoBaseRealm.awayLogoLink = self.awaylogoLink
-        infoBaseRealm.homaName = self.homeTeamName
-        infoBaseRealm.awayName = self.awayTeamName
-        infoBaseRealm.homePoint = self.homePoint
-        infoBaseRealm.awayPoint = self.awayPoint
-        infoBaseRealm.date = self.dataText
-        infoBaseRealm.yearText = self.yearText
-        infoBaseRealm.homeId = self.homeId
-        infoBaseRealm.awayId = self.awayId
-        infoBaseRealm.season = self.season
-        infoBaseRealm.league = self.league
-        try? self.realm?.write{
-            self.realm?.add(infoBaseRealm, update: .all)
-        }
-        if saveButton.backgroundColor != .green{
-            saveButton.backgroundColor = .green
-        }
-        
+    func loadAlert(){
         let alertUpdating = UIAlertController(title: "Updating saved data", message: "Please wait...", preferredStyle: .alert)
-
+        
         alertUpdating.view.tintColor = UIColor.black
-            let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 10,y: 5,width: 50, height: 50)) as UIActivityIndicatorView
-            loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.gray
-            loadingIndicator.startAnimating()
-
+        let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 10,y: 5,width: 50, height: 50)) as UIActivityIndicatorView
+        loadingIndicator.hidesWhenStopped = true
+        
+        loadingIndicator.startAnimating()
+        
         alertUpdating.view.addSubview(loadingIndicator)
-
-            self.present(alertUpdating, animated: true) {
-                self.dismiss(animated: true, completion: {
-                    let alertMessage = UIAlertController(title: "", message: "Saved events has been updated", preferredStyle: .alert)
-                    alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                    self.present(alertMessage, animated: true, completion: nil)
-                })
+        
+        self.present(alertUpdating, animated: true) {
+            self.dismiss(animated: true, completion: {
+                let alertMessage = UIAlertController(title: "", message: "Saved events has been updated", preferredStyle: .alert)
+                alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alertMessage, animated: true, completion: nil)
+            })
+        }
+    }
+    
+    @IBAction func savePressed(_ sender: UIButton) {
+        
+            buttons[2].titleLabel?.text = "Save"
+            let infoBaseRealm = InfoBaseRealm()
+            infoBaseRealm.fixtersId = self.fixtersId
+            infoBaseRealm.homeLogoLink = self.homeLogoLink
+            infoBaseRealm.awayLogoLink = self.awaylogoLink
+            infoBaseRealm.homaName = self.homeTeamName
+            infoBaseRealm.awayName = self.awayTeamName
+            infoBaseRealm.homePoint = self.homePoint
+            infoBaseRealm.awayPoint = self.awayPoint
+            infoBaseRealm.date = self.dataText
+            infoBaseRealm.yearText = self.yearText
+            infoBaseRealm.homeId = self.homeId
+            infoBaseRealm.awayId = self.awayId
+            infoBaseRealm.season = self.season
+            infoBaseRealm.league = self.league
+            try? self.realm?.write{
+                self.realm?.add(infoBaseRealm, update: .all)
             }
+            if saveButton.backgroundColor != .green{
+                saveButton.backgroundColor = .green
+            }
+            loadAlert()
         
         
         if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
@@ -154,6 +167,14 @@ class DetailCellViewController: UIViewController {
         }
         
         
+        
+        
     }
+    
+    
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        print("Logic for delete")
+    }
+    
 }
 

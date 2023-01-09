@@ -14,17 +14,17 @@ class StandingsViewController: UIViewController{
         configure()
         standingsBase(league: leagueId, season: season)
         if tableView.numberOfSections > 0 {
-
+            
         } else{
             
             let alertMessage = UIAlertController(title: "Sorry", message: "No data", preferredStyle: .alert)
             alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alertMessage, animated: true, completion: nil)
-
+            
         }
-      
+        
     }
-
+    
     
     func configure(){
         view.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
@@ -54,9 +54,9 @@ class StandingsViewController: UIViewController{
                 print("Finish")
             } catch {
                 print("no data")
-
-//                self.dataStatus = false
-                            }
+                
+                //                self.dataStatus = false
+            }
             
         }
     }
@@ -86,7 +86,7 @@ extension StandingsViewController: UITableViewDataSource, UITableViewDelegate{
         cell.goalsDiffLAbel.text = "GD \(data[indexPath.row].goalsDiff ?? 0)"
         cell.playersLabel.text = "PL \(data[indexPath.row].all?.played ?? 0)"
         cell.winLabel.text = "W \(data[indexPath.row].all?.win ?? 0)"
-       
+        
         return cell
     }
     

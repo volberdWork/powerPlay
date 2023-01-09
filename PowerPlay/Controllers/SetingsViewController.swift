@@ -17,7 +17,7 @@ class SetingsViewController: UIViewController {
         super.viewDidLoad()
         
         checkVibrationState()
-//        setupNavigationBarItems()
+        //        setupNavigationBarItems()
         
     }
     

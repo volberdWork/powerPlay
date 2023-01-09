@@ -4,15 +4,10 @@ import Kingfisher
 class SavedTableViewCell: UITableViewCell {
     
     @IBOutlet var dateLabel: UILabel!
-    
     @IBOutlet var leftImage: UIImageView!
-    
     @IBOutlet var rightImage: UIImageView!
-    
     @IBOutlet var pointsLabel: UILabel!
-    
     @IBOutlet var homeNameLabel: UILabel!
-    
     @IBOutlet var awayNameLabel: UILabel!
     
     var awaylogoLink = ""
