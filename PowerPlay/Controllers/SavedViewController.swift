@@ -55,7 +55,10 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
             vc.dataText = data.date
             vc.homeTeamName = data.homaName
             vc.awayTeamName = data.awayName
-//            vc.yearText = data.yearText
+            vc.yearText = data.yearText
+            vc.awayId = data.awayId
+            vc.homeId = data.homeId
+            
             
         }
         print("Select \(indexPath.row)")
@@ -71,6 +74,7 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
         cell.dateLabel.text = data.date
         cell.pointsLabel.text = "\(data.homePoint):\(data.awayPoint)"
         cell.awayNameLabel.text = data.awayName
+        
         
         return cell
     }
