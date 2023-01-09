@@ -11,5 +11,6 @@ class InfoBaseRealm: Object{
     @Persisted var awayLogoLink: String
     @Persisted var homePoint: Int
     @Persisted var awayPoint: Int
-}
 
+
+}

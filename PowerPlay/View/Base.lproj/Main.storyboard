@@ -436,16 +436,16 @@
                         <constraints>
                             <constraint firstItem="PrI-tD-RQK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3LQ-IK-dLy"/>
                             <constraint firstItem="PrI-tD-RQK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4w8-Em-x3d"/>
-                            <constraint firstItem="PrI-tD-RQK" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.89218" id="AS8-LB-2Rj"/>
                             <constraint firstAttribute="bottom" secondItem="PrI-tD-RQK" secondAttribute="bottom" id="YI5-g4-ugv"/>
-                            <constraint firstItem="PrI-tD-RQK" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="dFL-Pp-Si2"/>
                             <constraint firstItem="PrI-tD-RQK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fbz-Iq-jaI"/>
                             <constraint firstItem="XcU-w1-tWM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="imb-V9-aHI"/>
                             <constraint firstItem="XcU-w1-tWM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="rmL-0I-8eX"/>
                         </constraints>
                         <edgeInsets key="layoutMargins" top="0.0" left="20" bottom="0.0" right="20"/>
                     </view>
-                    <navigationItem key="navigationItem" id="duj-xm-v0U"/>
+                    <navigationItem key="navigationItem" customizationIdentifier="" id="duj-xm-v0U">
+                        <barButtonItem key="backBarButtonItem" title=" " image="backButton" landscapeImage="backButton" largeContentSizeImage="backButton" springLoaded="YES" style="done" id="d8F-vl-Luw"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="firstCollectionView" destination="eQF-Y3-1Z6" id="anp-JQ-DRj"/>
                         <outlet property="secondCollectionView" destination="I6O-kW-5aM" id="ntp-Fg-jii"/>
@@ -472,7 +472,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Saved Events">
-                                    <color key="baseForegroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -580,7 +580,9 @@
                             <constraint firstItem="bz4-VB-yKf" firstAttribute="trailing" secondItem="yU7-u5-vXm" secondAttribute="trailing" constant="30" id="qrf-of-bjy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Setings" largeTitleDisplayMode="always" style="editor" id="tag-jZ-DkN"/>
+                    <navigationItem key="navigationItem" title="Setings" largeTitleDisplayMode="always" id="tag-jZ-DkN">
+                        <barButtonItem key="backBarButtonItem" title="back" id="rPF-gm-FcC"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="onOffSwitch" destination="nVn-GX-bgl" id="ZBc-tN-zep"/>
                         <outlet property="vibrationLabel" destination="vhJ-Ej-GMj" id="6Jx-na-hxa"/>
@@ -946,20 +948,56 @@
             <objects>
                 <navigationController storyboardIdentifier="navigationID" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xme-e9-4Io" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3PX-ZM-4er">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="left" id="3PX-ZM-4er">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" systemColor="labelColor"/>
-                        <color key="barTintColor" red="0.094117647060000004" green="0.098039215690000001" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.040399045359999997" green="0.055267852989999998" blue="0.094026215220000001" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         </textAttributes>
+                        <navigationBarAppearance key="standardAppearance" backgroundEffect="prominent">
+                            <color key="backgroundColor" red="0.094117647058823528" green="0.098039215686274508" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                            <textAttributes key="largeTitleTextAttributes"/>
+                            <barButtonItemAppearance key="buttonAppearance">
+                                <barButtonItemStateAppearance key="normal"/>
+                                <barButtonItemStateAppearance key="highlighted"/>
+                                <barButtonItemStateAppearance key="disabled"/>
+                                <barButtonItemStateAppearance key="focused"/>
+                            </barButtonItemAppearance>
+                            <barButtonItemAppearance key="backButtonAppearance">
+                                <barButtonItemStateAppearance key="normal"/>
+                                <barButtonItemStateAppearance key="highlighted"/>
+                                <barButtonItemStateAppearance key="disabled"/>
+                                <barButtonItemStateAppearance key="focused"/>
+                            </barButtonItemAppearance>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="compactAppearance">
+                            <barButtonItemAppearance key="backButtonAppearance">
+                                <barButtonItemStateAppearance key="normal" backgroundImage="backButton">
+                                    <textAttributes key="titleTextAttributes">
+                                        <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                                    </textAttributes>
+                                    <offsetWrapper key="backgroundImagePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                                </barButtonItemStateAppearance>
+                                <barButtonItemStateAppearance key="highlighted" backgroundImage="psg"/>
+                                <barButtonItemStateAppearance key="disabled"/>
+                                <barButtonItemStateAppearance key="focused"/>
+                            </barButtonItemAppearance>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="17O-vY-H9y">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pB2-CG-8uL"/>
                     </connections>
@@ -976,7 +1014,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="eJs-uz-7ZF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.039215686274509803" green="0.054901960784313725" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ba-Wq-CbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1055,6 +1093,7 @@
     </scenes>
     <resources>
         <image name="Image" width="123.33333587646484" height="156.66667175292969"/>
+        <image name="backButton" width="39" height="39"/>
         <image name="background" width="130" height="281.33334350585938"/>
         <image name="backgrounfCollectin" width="123.33333587646484" height="156.66667175292969"/>
         <image name="gradient" width="166.66667175292969" height="166.66667175292969"/>
@@ -1062,17 +1101,11 @@
         <image name="psg" width="170.66667175292969" height="170.66667175292969"/>
         <image name="real" width="400" height="206.66667175292969"/>
         <image name="setingIcon" width="23.333333969116211" height="23.333333969116211"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

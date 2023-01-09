@@ -9,15 +9,20 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet var secondCollectionView: UICollectionView!
     var fixtersArray: [Response] = []
     var liveArray: [Response] = []
+    let headers: HTTPHeaders = ["x-apisports-key":"9a49740c5034d7ee252d1e1419a10faa"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-      loadDataMain()
-        
+        loadLiveBase()
+        loadFixtersBase()
+        let yourBackImage = UIImage(named: "psg")
+        self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = yourBackImage
+        self.navigationController?.navigationBar.backItem?.title = "Custom"
     }
     
-
+    
     
     func configure(){
         view.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
@@ -32,46 +37,45 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     
-    func loadDataMain(){
-        let headers: HTTPHeaders = ["x-apisports-key":"9a49740c5034d7ee252d1e1419a10faa"]
-        let urlLive = "https://v3.football.api-sports.io/fixtures?live=all"
-        AF.request(urlLive, headers: headers).responseJSON { responseJSON in
+    func loadLiveBase(){
+        let url = "https://v3.football.api-sports.io/fixtures?live=all"
+        
+        AF.request(url, headers: headers).responseJSON { responseJSON in
             let decoder = JSONDecoder()
             guard let respponseData = responseJSON.data else {return}
-           
+            
             do {
                 let data = try decoder.decode(LiveBase.self, from: respponseData)
+                print(data.response?.count ?? 0)
+                
                 self.liveArray = data.response!
                 self.firstCollectionView.reloadData()
-                print(data.response!)
-               
-            
-               
+                
             } catch {
                 print("Щось пішло не так")
             }
-       
+        }
     }
+    
+    func loadFixtersBase(){
+        let urlFixtures = "https://v3.football.api-sports.io/fixtures?next=50"
         
-            let urlFixtures = "https://v3.football.api-sports.io/fixtures?next=50"
+        AF.request(urlFixtures, headers: headers).responseJSON { responseJSON in
+            let decoder = JSONDecoder()
+            guard let respponseData = responseJSON.data else {return}
             
-            AF.request(urlFixtures, headers: headers).responseJSON { responseJSON in
-                let decoder = JSONDecoder()
-                guard let respponseData = responseJSON.data else {return}
-              
-                do {
-                    let data = try decoder.decode(FixtersBase.self, from: respponseData)
-                    self.fixtersArray = data.response!
-                    self.secondCollectionView.reloadData()
-                 
-                } catch {
-                    print("Щось пішло не так")
-                }
+            do {
+                let data = try decoder.decode(FixtersBase.self, from: respponseData)
+                print(data.response ?? 0)
+                self.fixtersArray = data.response!
+                self.secondCollectionView.reloadData()
+                
+            } catch {
+                print("Щось пішло не так")
             }
-            
-      
-        
+        }
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -132,7 +136,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             } else{
                 return
             }
-           
+            
         case firstCollectionView :
             let main = UIStoryboard(name: "Main", bundle: nil)
             if let vc = main.instantiateViewController(withIdentifier: "DetailCellViewController") as? DetailCellViewController {
@@ -152,8 +156,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 vc.season = self.liveArray[indexPath.row].league?.season ?? 0
                 vc.league = self.liveArray[indexPath.row].league?.id ?? 0
                 vc.fixtersId = self.liveArray[indexPath.row].fixture?.id ?? 0
-              
-                
             }
             
             if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
@@ -186,6 +188,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
 }
+
 
 extension MainViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

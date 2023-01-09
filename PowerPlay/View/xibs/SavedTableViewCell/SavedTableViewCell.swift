@@ -33,8 +33,8 @@ class SavedTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        leftImage.kf.setImage(with: URL(string: awaylogoLink))
-        rightImage.kf.setImage(with: URL(string: homelogoLink))
+        leftImage.kf.setImage(with: URL(string: homelogoLink))
+        rightImage.kf.setImage(with: URL(string: awaylogoLink))
     }
     
     

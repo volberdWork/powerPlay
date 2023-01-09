@@ -38,14 +38,12 @@ class DetailCellViewController: UIViewController {
     var homeId = 0
     var season = 0
     var league = 0
-  
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         
-       
         
     }
     
@@ -124,12 +122,34 @@ class DetailCellViewController: UIViewController {
         if saveButton.backgroundColor != .green{
             saveButton.backgroundColor = .green
         }
+        
+        let alertUpdating = UIAlertController(title: "Updating saved data", message: "Please wait...", preferredStyle: .alert)
+
+        alertUpdating.view.tintColor = UIColor.black
+            let loadingIndicator: UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 10,y: 5,width: 50, height: 50)) as UIActivityIndicatorView
+            loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+            loadingIndicator.startAnimating()
+
+        alertUpdating.view.addSubview(loadingIndicator)
+
+            self.present(alertUpdating, animated: true) {
+                self.dismiss(animated: true, completion: {
+                    let alertMessage = UIAlertController(title: "", message: "Saved events has been updated", preferredStyle: .alert)
+                    alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alertMessage, animated: true, completion: nil)
+                })
+            }
+        
+        
         if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
             UIDevice.vibrate()
             print("vibrate on")
         } else{
             return
         }
+        
+        
     }
 }
 
