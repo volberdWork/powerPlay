@@ -118,6 +118,8 @@ class DetailCellViewController: UIViewController {
         infoBaseRealm.yearText = self.yearText
         infoBaseRealm.homeId = self.homeId
         infoBaseRealm.awayId = self.awayId
+        infoBaseRealm.season = self.season
+        infoBaseRealm.league = self.league
         try? self.realm?.write{
             self.realm?.add(infoBaseRealm, update: .all)
         }

@@ -1,6 +1,4 @@
 import UIKit
-import Alamofire
-import Kingfisher
 import RealmSwift
 class SavedViewController: UIViewController {
     
@@ -58,7 +56,8 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
             vc.yearText = data.yearText
             vc.awayId = data.awayId
             vc.homeId = data.homeId
-            
+            vc.season = data.season
+            vc.league = data.league
             
         }
         print("Select \(indexPath.row)")
@@ -74,6 +73,7 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
         cell.dateLabel.text = data.date
         cell.pointsLabel.text = "\(data.homePoint):\(data.awayPoint)"
         cell.awayNameLabel.text = data.awayName
+        
         
         
         return cell

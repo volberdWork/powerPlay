@@ -14,5 +14,7 @@ class InfoBaseRealm: Object{
     @Persisted var yearText: String
     @Persisted var awayId: Int
     @Persisted var homeId: Int
+    @Persisted var league: Int
+    @Persisted var season: Int
 
 }
