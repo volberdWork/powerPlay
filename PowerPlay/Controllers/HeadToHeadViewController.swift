@@ -34,17 +34,27 @@ class HeadToHeadViewController: UIViewController {
             guard let respponseData = responseJSON.data else {return}
             do {
                 let data = try decoder.decode(HeadToHeadBase.self, from: respponseData)
-                self.array = data.response!
+                if data.response == nil {
+                    self.showAlertAction(title: "Sorry", message: "No DATA")
+                }else{
+                    self.array = data.response!
+                }
                 self.tableView.reloadData()
             } catch {
-                print("Щось пішло не так ")
+               
             }
             
         }
     }
     
     
-    
+    func showAlertAction(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 

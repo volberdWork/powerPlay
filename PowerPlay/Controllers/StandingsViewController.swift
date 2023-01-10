@@ -13,16 +13,16 @@ class StandingsViewController: UIViewController{
         super.viewDidLoad()
         configure()
         standingsBase(league: leagueId, season: season)
-        if tableView.numberOfSections > 0 {
-            
-        } else{
-            
-            let alertMessage = UIAlertController(title: "Sorry", message: "No data", preferredStyle: .alert)
-            alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alertMessage, animated: true, completion: nil)
-            
-        }
         
+        
+    }
+    
+    func showAlertAction(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     
@@ -48,13 +48,13 @@ class StandingsViewController: UIViewController{
                     if unwrapped.count > 0{
                         self.array = unwrapped[0].league?.standings ?? [[]]
                     }else{
-                        return
+                        self.showAlertAction(title: "Sorry", message: "No data")
                     }
                 }
                 self.tableView.reloadData()
                 print("Finish")
             } catch {
-                print("no data")
+               
                 
                 //                self.dataStatus = false
             }
@@ -63,15 +63,24 @@ class StandingsViewController: UIViewController{
     }
     
     
+   
+        
     
     
 }
 
 extension StandingsViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array[0].count
+
+            return array[0].count
+        
         
     }
+    
+   
+
+       
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "StandingsTableViewCell") as? StandingsTableViewCell else { return UITableViewCell() }
