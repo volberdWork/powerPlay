@@ -25,11 +25,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     
-    
-   
-    
-    
-    
     func configure(){
         view.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
         
