@@ -11,22 +11,22 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var liveArray: [Response] = []
     let headers: HTTPHeaders = ["x-apisports-key":"9a49740c5034d7ee252d1e1419a10faa"]
     
+    let imgBackArrow = UIImage(named: "backButton")
+
+    let backImage = UIImage(named: "backButton")
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         loadLiveBase()
         loadFixtersBase()
-        
+      
     }
     
     
     
-    func setupNavigationBar(){
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        
-        
-    }
+   
     
     
     

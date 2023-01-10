@@ -31,6 +31,7 @@ class StandingsViewController: UIViewController{
         tableView.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
         tableView.register(StandingsTableViewCell.nib(), forCellReuseIdentifier: StandingsTableViewCell.identifier )
         self.title = "Standings"
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }
     
     

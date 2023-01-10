@@ -13,8 +13,10 @@ class HeadToHeadViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backButtonTitle = ""
         configure()
         headToHeadData(first: firstId, second: secondId)
+        
         
     }
     

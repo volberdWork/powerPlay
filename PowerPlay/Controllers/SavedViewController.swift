@@ -8,6 +8,7 @@ class SavedViewController: UIViewController {
     var realmArray: [InfoBaseRealm] = []
     var awaylogoLink = ""
     var homeLogoLink = ""
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class SavedViewController: UIViewController {
         view.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
         tableView.backgroundColor = UIColor(red: 24/255, green: 25/255, blue: 31/255, alpha: 1)
         tableView.register(SavedTableViewCell.nib(), forCellReuseIdentifier: SavedTableViewCell.identifier )
+     
     }
     
 }
@@ -59,6 +61,8 @@ extension SavedViewController: UITableViewDelegate, UITableViewDataSource {
             vc.season = data.season
             vc.league = data.league
             vc.textButtonSaveOrDelete = "Delete"
+          
+           
         }
         print("Select \(indexPath.row)")
     }

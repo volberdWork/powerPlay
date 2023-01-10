@@ -17,26 +17,11 @@ class SetingsViewController: UIViewController {
         super.viewDidLoad()
         
         checkVibrationState()
-        //        setupNavigationBarItems()
+        
         
     }
     
     
-    private func setupNavigationBarItems(){
-        let view = UIView()
-        let button = UIButton(type: .system)
-        button.setImage(UIImage(named: "backButton"), for: .normal)
-        button.addTarget(self, action: #selector(popnav), for: .touchUpInside)
-        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        button.sizeToFit()
-        view.addSubview(button)
-        view.frame = button.bounds
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: view)
-    }
-    
-    @objc func popnav() {
-        self.navigationController?.popViewController(animated: true)
-    }
     func checkVibrationState(){
         if (userSettingsVibration.bool(forKey: onOffKey)){
             onOffSwitch.setOn(true, animated: false)
@@ -68,47 +53,49 @@ class SetingsViewController: UIViewController {
         let main = UIStoryboard(name: "Main", bundle: nil)
         if let vc = main.instantiateViewController(withIdentifier: "SavedViewController") as? SavedViewController {
             navigationController?.pushViewController(vc, animated: true)
-        }
-        if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
-            UIDevice.vibrate()
-            print("vibrate on")
-        } else{
-            return
-        }
-    }
-    @IBAction func pressedButtonNotification(_ sender: UIButton) {
-        performNotificationSettings()
-        if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
-            UIDevice.vibrate()
-            print("vibrate on")
-        } else{
-            return
+            vc.title = "Saved"
+            
+            if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
+                UIDevice.vibrate()
+                print("vibrate on")
+            } else{
+                return
+            }
         }
     }
-    
-    @IBAction func termOfServiceButtonPressed(_ sender: UIButton) {
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        if let vc = main.instantiateViewController(withIdentifier: "TermsOfServiceViewController") as? TermsOfServiceViewController {
-            present(vc, animated: true)
-        }
-        if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
-            UIDevice.vibrate()
-            print("vibrate on")
-        } else{
-            return
-        }
-    }
-    
-    
-    
-    func performNotificationSettings() {
-        UIImpactFeedbackGenerator(style: .light).impactOccurred()
-        
-        if let appSettings = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(appSettings) {
-            UIApplication.shared.open(appSettings)
+        @IBAction func pressedButtonNotification(_ sender: UIButton) {
+            performNotificationSettings()
+            if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
+                UIDevice.vibrate()
+                print("vibrate on")
+            } else{
+                return
+            }
         }
         
+        @IBAction func termOfServiceButtonPressed(_ sender: UIButton) {
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            if let vc = main.instantiateViewController(withIdentifier: "TermsOfServiceViewController") as? TermsOfServiceViewController {
+                present(vc, animated: true)
+            }
+            if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
+                UIDevice.vibrate()
+                print("vibrate on")
+            } else{
+                return
+            }
+        }
+        
+        
+        
+        func performNotificationSettings() {
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            
+            if let appSettings = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(appSettings) {
+                UIApplication.shared.open(appSettings)
+            }
+            
+        }
+        
     }
     
-}
-

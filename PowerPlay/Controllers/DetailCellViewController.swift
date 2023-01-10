@@ -39,15 +39,25 @@ class DetailCellViewController: UIViewController {
     var season = 0
     var league = 0
     
-    @IBOutlet var deleteButton: UIButton!
     var textButtonSaveOrDelete = ""
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        let playAttributed = NSAttributedString(string: textButtonSaveOrDelete, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 25.0), NSAttributedString.Key.foregroundColor: UIColor.white])
+
+        saveButton.setAttributedTitle(playAttributed, for: .normal)
+        
+      
+        navigationItem.backButtonTitle = ""
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
-        
-        
+        saveButton.titleLabel?.font = .systemFont(ofSize: 10)
+      
     }
     
     
@@ -69,12 +79,8 @@ class DetailCellViewController: UIViewController {
         pointLabel.text = "\(homePoint):\(awayPoint)"
         awayImage.kf.setImage(with: URL(string: awaylogoLink))
         homeImage.kf.setImage(with: URL(string: homeLogoLink))
-        saveButton.backgroundColor = .red
-        if textButtonSaveOrDelete == "Save"{
-            deleteButton.isHidden = true
-        } else{
-            buttons[2].isHidden = true
-        }
+        
+        
     }
     
     
@@ -87,6 +93,7 @@ class DetailCellViewController: UIViewController {
             vc.homeLogoLink = homeLogoLink
             vc.awaylogoLink = awaylogoLink
             vc.title = "H2H"
+//            vc.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         }
         if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
             UIDevice.vibrate()
@@ -134,8 +141,7 @@ class DetailCellViewController: UIViewController {
     }
     
     @IBAction func savePressed(_ sender: UIButton) {
-        
-            buttons[2].titleLabel?.text = "Save"
+        if buttons[2].titleLabel?.text == "Save"{
             let infoBaseRealm = InfoBaseRealm()
             infoBaseRealm.fixtersId = self.fixtersId
             infoBaseRealm.homeLogoLink = self.homeLogoLink
@@ -153,12 +159,15 @@ class DetailCellViewController: UIViewController {
             try? self.realm?.write{
                 self.realm?.add(infoBaseRealm, update: .all)
             }
-            if saveButton.backgroundColor != .green{
-                saveButton.backgroundColor = .green
-            }
+
             loadAlert()
+        } else if buttons[2].titleLabel?.text == "Delete"{
+            realmDelete(idObjToDel: self.fixtersId)
+            self.navigationController?.popViewController(animated: true)
+            }
         
-        
+
+
         if SetingsViewController().userSettingsVibration.bool(forKey: "onOffKey"){
             UIDevice.vibrate()
             print("vibrate on")
@@ -166,15 +175,26 @@ class DetailCellViewController: UIViewController {
             return
         }
         
-        
-        
-        
     }
     
-    
-    @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        print("Logic for delete")
-    }
-    
+    func realmDelete(idObjToDel: Int) {
+            do {
+              let realm = try Realm()
+              let object = realm.objects(InfoBaseRealm.self).first
+              try! realm.write {
+                if let obj = object {
+                  realm.delete(obj)
+                }
+              }
+            } catch let error as NSError {
+              // handle error
+             
+            }
+          }
 }
-
+            
+            
+            
+            
+        
+    
